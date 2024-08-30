@@ -1,0 +1,254 @@
+<div class="wrapper" th:fragment="wrapper">
+    <div class="header-list">
+        
+        <div class="card-iphone">
+            <h1>Up to 10% Voucher</h1>
+            <a href="/shop">Shop Now</a>
+        </div>
+    </div>
+    <section id="latest-product">
+        <div class="today">
+            <div class="today-red"></div>
+            Today's
+        </div>
+        <div class="flash">
+            <h1>Flash Sales</h1>
+            <div class="time">
+                <div class="duration">
+                    <span>Days</span>
+                    <h1>03</h1>
+                </div>
+                <h1>:</h1>
+                <div class="duration">
+                    <span>Hours</span>
+                    <h1>07</h1>
+                </div>
+                <h1>:</h1>
+                <div class="duration">
+                    <span>Minutes</span>
+                    <h1>03</h1>
+                </div>
+                <h1>:</h1>
+                <div class="duration">
+                    <span>Seconds</span>
+                    <h1>03</h1>
+                </div>
+            </div>
+            <div class="arrows">
+                <img class="arrow-img-icons"id="arrow" onclick="arrowLeft()" th:src="@{/images/arrow-left.svg}" alt="arrow-left">
+                <img class="arrow-img-icons"id="arrow" onclick="arrowRight()" th:src="@{/images/arrow-right.svg}" alt="arrow-right">
+            </div>
+        </div>
+        <div class="products-card">
+            <div class="card">
+                <div class="products-img-card"></div>
+                <div class="products-card-content">
+                    <h5>Lorem ipsum dolor sit amet</h5>
+                </div>
+            </div>
+            <div class="card">
+                <div class="products-img-card"></div>
+                <div class="products-card-content">
+                    <h5>Lorem ipsum dolor sit amet</h5>
+                </div>
+            </div>
+            <div class="card">
+                <div class="products-img-card"></div>
+                <div class="products-card-content">
+                    <h5>Lorem ipsum dolor sit amet</h5>
+                </div>
+            </div>
+            <div class="card">
+                <div class="products-img-card"></div>
+                <div class="products-card-content">
+                    <h5>Lorem ipsum dolor sit amet</h5>
+                </div>
+            </div>
+            <div class="card">
+                <div class="products-img-card"></div>
+                <div class="products-card-content">
+                    <h5>Lorem ipsum dolor sit amet</h5>
+                </div>
+            </div>
+            <div class="card">
+                <div class="products-img-card"></div>
+                <div class="products-card-content">
+                    <h5>Lorem ipsum dolor sit amet</h5>
+                </div>
+            </div>
+            <div class="card">
+                <div class="products-img-card"></div>
+                <div class="products-card-content">
+                    <h5>Lorem ipsum dolor sit amet</h5>
+                </div>
+            </div>
+        </div>
+        <div class="btn">
+            <button>View All Products</button>
+        </div>
+    </section>
+    <section class="bottom-border">
+        <div class="today">
+            <div class="today-red"></div>
+            Categories
+        </div>
+        <div class="flash">
+            <h1>Browse by category</h1>
+        <div class="arrows">
+            <img class="arrow-img-icons" onclick="arrowLeft()" th:src="@{/images/arrow-left.svg}" alt="arrow-left">
+            <img class="arrow-img-icons" onclick="arrowRight()" th:src="@{/images/arrow-right.svg}" alt="arrow-right">
+        </div>
+        </div>
+        <div class="category-card">
+            <div class="card">
+                <div class="cat-img">Phones</div>    
+            </div>
+            <div class="card">
+                <div class="cat-img">Computer</div>
+            </div>
+            <div class="card">
+                <div class="cat-img">SmartWatch</div>
+                
+            </div>
+            <div class="card">
+                <div class="cat-img">Headphones</div>
+            </div>
+            <div class="card">
+                <div class="cat-img">Gaming</div>
+            </div>
+        </div>
+    </section>
+    <section class="bottom-border">
+        <div class="today">
+            <div class="today-red"></div>
+            This Month
+        </div>
+        <div class="flash">
+            <h1>Best Selling Products</h1>
+        <div class="arrows">
+            <button>View All</button>
+        </div>
+        </div>
+        
+        <div class="products-card" id="procr">
+            <div class="card">
+                <div class="products-img-card"></div>
+                <div class="products-card-content">
+                    <h5>Lorem ipsum dolor sit amet</h5>
+                </div>
+            </div>
+            <div class="card">
+                <div class="products-img-card"></div>
+                <div class="products-card-content">
+                    <h5>Lorem ipsum dolor sit amet</h5>
+                </div>
+            </div>
+            <div class="card">
+                <div class="products-img-card"></div>
+                <div class="products-card-content">
+                    <h5>Lorem ipsum dolor sit amet</h5>
+                </div>
+            </div>
+            <div class="card">
+                <div class="products-img-card"></div>
+                <div class="products-card-content">
+                    <h5>Lorem ipsum dolor sit amet</h5>
+                </div>
+        </div>
+    </section>
+    <section>
+        <div class="today">
+            <div class="today-red"></div>
+            Categories
+        </div>
+        <div class="flash">
+            <h1>Browse by category</h1>
+        </div>
+        <div class="arrows">
+            <img class="arrow-img-icons" onclick="arrowLeft()" th:src="@{/images/arrow-left.svg}" alt="arrow-left">
+            <img class="arrow-img-icons" onclick="arrowRight()" th:src="@{/images/arrow-right.svg}" alt="arrow-right">
+        </div>
+        <div class="products-card" id="products">
+            <div class="card">
+                <div class="products-img-card"></div>
+                <div class="products-card-content">
+                    <h5>Lorem ipsum dolor sit amet</h5>
+                </div>
+            </div>
+            <div class="card">
+                <div class="products-img-card"></div>
+                <div class="products-card-content">
+                    <h5>Lorem ipsum dolor sit amet</h5>
+                </div>
+            </div>
+            <div class="card">
+                <div class="products-img-card"></div>
+                <div class="products-card-content">
+                    <h5>Lorem ipsum dolor sit amet</h5>
+                </div>
+            </div>
+            <div class="card">
+                <div class="products-img-card"></div>
+                <div class="products-card-content">
+                    <h5>Lorem ipsum dolor sit amet</h5>
+                </div>
+            </div>
+            <div class="card">
+                <div class="products-img-card"></div>
+                <div class="products-card-content">
+                    <h5>Lorem ipsum dolor sit amet</h5>
+                </div>
+            </div>
+            <div class="card">
+                <div class="products-img-card"></div>
+                <div class="products-card-content">
+                    <h5>Lorem ipsum dolor sit amet</h5>
+                </div>
+            </div>
+            <div class="card">
+                <div class="products-img-card"></div>
+                <div class="products-card-content">
+                    <h5>Lorem ipsum dolor sit amet</h5>
+                </div>
+            </div>
+            <div class="card">
+                <div class="products-img-card"></div>
+                <div class="products-card-content">
+                    <h5>Lorem ipsum dolor sit amet</h5>
+                </div>
+            </div>
+            <div class="card">
+                <div class="products-img-card"></div>
+                <div class="products-card-content">
+                    <h5>Lorem ipsum dolor sit amet</h5>
+                </div>
+            </div>
+            <div class="card">
+                <div class="products-img-card"></div>
+                <div class="products-card-content">
+                    <h5>Lorem ipsum dolor sit amet</h5>
+                </div>
+            </div>
+        </div>
+        <div class="btn" style="border-bottom: none;">
+            <button>View All Products</button>
+        </div>
+    </section>
+    <section class="last-section">
+        <div class="last-section-card">
+            <img class="last-section-img-icons" th:src="@{/images/car-side.svg}" alt="car-side">
+            <h3>FREE AND FAST DELIVERY</h3>
+            <p>Free delivery for all orders over $140</p>
+        </div>
+        <div class="last-section-card">
+            <img class="last-section-img-icons" th:src="@{/images/headset.svg}" alt="car-side">
+            <h3>24/7 CUSTOMER SERVICE</h3>
+            <p>Friendly 24/7 customer service</p>
+        </div>
+        <div  class="last-section-card">
+            <img class="last-section-img-icons" th:src="@{/images/check-square.svg}" alt="car-side">
+            <h3>MONEY BACK GUARANTEE</h3>
+            <p>We return money within 30 days</p>
+        </div>
+    </section>
+</main>

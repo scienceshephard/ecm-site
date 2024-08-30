@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title th:text="${title}"></title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link th:href='@{/css/main.css}' rel='stylesheet'>
+    <script th:src='@{/js/app.js}'></script>
+</head>
+<body>
+    <div class="container">
+        <div th:replace="~{fragments/header :: header}"></div>
+        <main>
+            <form action="" method="post">
+                <input type="text" name="product">
+                <input type="text" name="description">
+                <input type="text" name="quantity">
+                <input type="date" name="release_date">
+                <input type="button" value="Submit">
+            </form>
+
+        </main>
+        <div th:replace="~{fragments/footer :: footer}"></div>
+    </div>
+</body>
+</html>

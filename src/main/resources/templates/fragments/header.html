@@ -1,0 +1,26 @@
+
+        <header class="header">Summer Sale for all Swim Suits And Free Delivery -OFF 50%<a href="/cart" class="text-decoration-none">Shop Now</a></header>
+<nav th:fragment="header" class="navbar">
+    <div class="navbar-nav">
+        <h1><a href="/">Shephards✌</a></h1>
+        <div class="nav-links">
+            <a href="menubtn" id="menubtn"><img class="img-icons menuIcon" th:src="@{/images/menu-fill.svg}" alt="Menu-fill"></a>
+            <div class="MainLinks-default" id="nav-links" >
+                <a href="/">Home</a>
+                <a href="/contact">Contact</a>
+                <a href="/about">About</a>
+                <a href="/sign-up">Sign-Up</a>
+            </div>
+        </div>
+        <div class="nav-icons">
+            <div class="search-box">
+                <input type="search" placeholder="What are you looking for?" class="search-input">
+                <a href="/"><img class="img-icons" th:src="@{/images/search.svg}" alt="search"></a>
+            </div>
+                <a href="/"><img class="img-icons" th:src="@{/images/heart.svg}" alt="heart"></a>
+                <a href="/"><img class="img-icons" th:src="@{/images/cart-plus.svg}" alt="cart"></a>
+                <a href="/"><img class="img-icons" th:src="@{/images/user-circle.svg}" alt="user-circle"></a>
+        </div>
+    </div>
+    <script th:src='@{/js/app.js}'></script>
+</nav>
