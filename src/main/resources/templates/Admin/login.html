@@ -13,18 +13,18 @@
     <div th:replace="~{fragments/header :: header}"></div>
     
     <div class="wrapper form-container">
-        <h1>Please Login</h1>
-        <div th:if="${param.error}">Invalid Username or Password</div>
-        <div th:if="${param.logout}">You have logged out </div>
-        <form th:action="@{/login}" method="post">
+        <div class="img-wrap"></div>
+        <form th:action="@{/login}" class="form-login" method="post">
+        <h1>Log In🤪</h1>
+        <div class="error-login" th:if="${param.error}">Invalid Username or Password🙄</div>
+        <div class="logout" th:if="${param.logout}">You have logged out 😑 </div>
             <div class="form">
                 <input type="text" name="username" placeholder="Username">
                 <input type="password" name="password" placeholder="Password">
             </div>
-            <button type="submit">Log In</button>
+            <button class="submit" type="submit">Log In</button>
         </form>
     </div>
-
     <div th:replace="~{fragments/footer :: footer}"></div>
 </div>
 </body>

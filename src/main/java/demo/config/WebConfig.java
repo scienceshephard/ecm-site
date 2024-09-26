@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.web.client.RestTemplate;
 
 @Configuration
 @EnableWebSecurity
@@ -21,7 +22,7 @@ public class WebConfig {
     @Bean
     public SecurityFilterChain securityFilterChain( HttpSecurity http) throws Exception{
 
-        http.authorizeHttpRequests(auth->auth.requestMatchers("/h2-console/**", "/fragments/**", "/images/**", "/css/**", "/js/**")
+        http.authorizeHttpRequests(auth->auth.requestMatchers("/h2-console/**", "/register", "/fragments/**", "/images/**", "/css/**", "/js/**")
         .permitAll().anyRequest().authenticated()
         ).formLogin(form ->form.loginPage("/login").permitAll()
         ).logout(logout ->logout.permitAll()).csrf(csrf -> csrf.ignoringRequestMatchers("/h2-console/**")
@@ -35,5 +36,10 @@ public class WebConfig {
         provider.setPasswordEncoder(NoOpPasswordEncoder.getInstance());
         provider.setUserDetailsService(userDetailsService);
         return provider;
+    }
+
+    @Bean
+    public RestTemplate restTemplate(){
+        return new RestTemplate();
     }
 }

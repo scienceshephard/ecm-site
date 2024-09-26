@@ -1,6 +1,39 @@
 .form-container{
-    border: 1px solid red;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
 }
-input{
-    outline: auto;
+.form{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 20vh;
+
+}
+.form input{
+    border-bottom: 2px solid grey;
+    margin: 10px;
+    color: gray;
+    font-size: 1.3rem;
+}
+.form input:nth-last-child(1){
+    margin-top: auto;
+}
+.form-login .submit{
+    padding: 16px;
+    margin-top: 20px;
+    font-size: 1.3rem;
+    background-color: chocolate;
+    color: white;
+}
+.img-wrap{
+    border: 1px solid black;
+    width: 400px;
+    height: 400px;
+}
+
+@media(max-width: 716px){
+    .img-wrap{
+        display: none;
+    }
 }

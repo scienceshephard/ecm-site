@@ -19,11 +19,6 @@ import java.util.Date;
 @NoArgsConstructor
 public class Product {
 
-    final private String title="Gadget Store";
-
-    public String getTitle() {
-        return title;
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

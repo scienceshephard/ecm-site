@@ -38,7 +38,4 @@ public class ProductService {
     public void deleteProductById(int prodId) {
         productRepo.deleteById(prodId);
     }
-    public String getTitle(){
-        return new Product().getTitle();
-    }
 }

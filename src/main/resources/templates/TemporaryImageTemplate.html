@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Template</title>
+</head>
+<body>
+    <h1>Random Image from Pexels</h1>
+    <div th:if="${imageUrl != null}">
+        <img th:src="${imageUrl}" alt="Random Image" style="max-width:100%; height:auto;"/>
+    </div>
+    <div th:if="${errorMessage != null}">
+        <p th:text="${errorMessage}"></p>
+    </div>
+</body>
+</html>
