@@ -1,4 +1,4 @@
-package demo.Service;
+package demo.service;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;

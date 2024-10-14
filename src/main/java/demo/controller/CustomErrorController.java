@@ -1,4 +1,4 @@
-package demo.Controller;
+package demo.controller;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.http.HttpServletRequest;

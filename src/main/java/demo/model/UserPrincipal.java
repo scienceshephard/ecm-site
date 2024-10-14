@@ -1,5 +1,4 @@
-package demo.Model;
-import org.springframework.beans.factory.annotation.Autowired;
+package demo.model;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -9,9 +8,9 @@ import java.util.Collections;
 
 public class UserPrincipal implements UserDetails {
 
-    private Users user;
-    public UserPrincipal(Users user) {
-        this.user=user;
+    private UserEntity userEntity;
+    public UserPrincipal(UserEntity user) {
+        this.userEntity=user;
     }
 
     @Override
@@ -21,11 +20,11 @@ public class UserPrincipal implements UserDetails {
 
     @Override
     public String getPassword() {
-        return user.getPassword();
+        return userEntity.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return user.getUsername();
+        return userEntity.getUsername();
     }
 }

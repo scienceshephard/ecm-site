@@ -1,7 +1,8 @@
-package demo.Controller;
+package demo.controller;
 
-import demo.Model.Product;
-import demo.Service.ProductService;
+import demo.model.Product;
+import demo.service.ProductService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

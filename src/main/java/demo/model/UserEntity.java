@@ -1,4 +1,4 @@
-package demo.Model;
+package demo.model;
 
 
 import jakarta.persistence.Entity;
@@ -9,16 +9,21 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import jakarta.persistence.Id;
+
 import org.springframework.stereotype.Component;
+
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Entity
 @Component
-public class Users {
+public class UserEntity {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int Id;
 
     @NotEmpty(message = "Name is required")
