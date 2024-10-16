@@ -50,7 +50,7 @@ public class HomeController{
 
     @GetMapping("/register")
     public String SignUpPage(Model model){
-        model.addAttribute("title", title);
+        model.addAttribute("title", title); 
         return "register";
     }
     @GetMapping("/contact")
