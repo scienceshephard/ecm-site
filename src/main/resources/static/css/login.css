@@ -7,8 +7,6 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    height: 20vh;
-
 }
 .form input{
     border-bottom: 2px solid grey;
@@ -19,7 +17,7 @@
 .form input:nth-last-child(1){
     margin-top: auto;
 }
-.form-login .submit{
+.submit{
     padding: 16px;
     font-size: 1.3rem;
     background-color: chocolate;
@@ -30,7 +28,10 @@
     width: 400px;
     height: 400px;
 }
-
+.error{
+    background-color: #ce1d1ddc;
+    width: 100%;
+}
 @media(max-width: 716px){
     .img-wrap{
         display: none;

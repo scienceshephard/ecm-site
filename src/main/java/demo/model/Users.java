@@ -27,10 +27,6 @@ public class Users {
     @NotEmpty(message="Confirm Password is required")
     private String ConfirmPassword;
 
-    public void setConfirmPassword(String confirmPassword){
-        this.ConfirmPassword=confirmPassword;
-    }
-
     public boolean isPasswordMatching(){
         return this.Password != null && this.Password.equals(this.ConfirmPassword);
     }

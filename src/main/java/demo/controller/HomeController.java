@@ -6,9 +6,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import demo.service.ImageService;
 import demo.service.ProductService;
+
 
 @Controller
 @RequestMapping("/")
@@ -16,6 +16,9 @@ public class HomeController{
 
     @Autowired
     private ImageService imageService;
+
+
+
     @GetMapping("/images")
     public String getImage(@RequestParam(defaultValue = "nature") String query, Model model){
         String imageurl=imageService.fetchRandomImages(query);
@@ -26,8 +29,7 @@ public class HomeController{
         }
         return "TemporaryImageTemplate";
     }
-
-    private final String title= "Gadget Store";
+    public static final String title= "Gadget Store";
     @GetMapping("/login")
     String login(Model model){
         model.addAttribute("title", title );
@@ -47,12 +49,7 @@ public class HomeController{
         model.addAttribute("title", title);
         return ("Admin/admin");
     }
-
-    @GetMapping("/register")
-    public String SignUpPage(Model model){
-        model.addAttribute("title", title); 
-        return "register";
-    }
+    
     @GetMapping("/contact")
     public String ContactPage(Model model){
         model.addAttribute("title", title);
