@@ -1,7 +1,10 @@
 package demo.controller;
 
+import java.nio.file.attribute.UserPrincipal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -15,6 +18,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import demo.config.WebConfig;
@@ -22,6 +26,8 @@ import demo.model.UserEntity;
 import demo.model.Users;
 import demo.service.UserService;
 import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @Controller
@@ -62,11 +68,17 @@ public class UserController {
         model.addAttribute("success", "Form submitted successully");
         userService.addUser(userEntity);
 
-        webconfig.authenticationProvider();
         UserDetails userDetails= userDetailsService.loadUserByUsername(userEntity.getUsername());
         UsernamePasswordAuthenticationToken auToken = new UsernamePasswordAuthenticationToken( userDetails, null, userDetails.getAuthorities());
         SecurityContextHolder.getContext().setAuthentication((auToken));
 
         return "redirect:/";
     }
+    // @GetMapping("userid{id}")
+    // public ResponseEntity<UserPrincipal u> AccountSettings(@PathVariable int userid) {
+
+
+    //     return "account";
+    // }
+    
 }

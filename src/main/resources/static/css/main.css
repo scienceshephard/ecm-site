@@ -293,7 +293,7 @@ button:hover{
         width: fit-content;
     }
 }
-@media (max-width:500px){
+@media (max-width:535px){
     .last-section{
         justify-content: center;
     }
