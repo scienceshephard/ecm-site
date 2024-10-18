@@ -25,8 +25,10 @@ public class WebConfig {
 
         http.authorizeHttpRequests(auth->auth.requestMatchers("/h2-console/**", "/register", "/fragments/**", "/images/**", "/css/**", "/js/**")
         .permitAll().anyRequest().authenticated()
-        ).formLogin(form ->form.loginPage("/login").permitAll()
-        ).logout(logout ->logout.permitAll()).csrf(csrf -> csrf.ignoringRequestMatchers("/h2-console/**")
+        ).formLogin(form ->form.loginPage("/login").defaultSuccessUrl("/")
+        .permitAll()
+        ).logout(logout ->logout.logoutUrl("/logout").logoutSuccessUrl("/")
+        .permitAll()).csrf(csrf -> csrf.ignoringRequestMatchers("/h2-console/**")
         ).headers(headers->headers.frameOptions(frameOptions -> frameOptions.sameOrigin()));
         return http.build();
     }

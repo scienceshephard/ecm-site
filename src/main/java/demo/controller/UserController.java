@@ -18,28 +18,22 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import demo.config.WebConfig;
 import demo.model.UserEntity;
 import demo.model.Users;
 import demo.service.UserService;
 import jakarta.validation.Valid;
-import org.springframework.web.bind.annotation.RequestParam;
-
 
 
 @Controller
-public class UserController {
+public class UserController extends BaseController{
 
     private final UserDetailsService userDetailsService;
     private final PasswordEncoder passwordEncoder;
     String title=HomeController.title;
     @Autowired
     UserService userService;
-    @Autowired
-    WebConfig webconfig;
     public UserController(PasswordEncoder passwordEncoder, UserDetailsService userDetailsService){
         this.passwordEncoder=passwordEncoder;
         this.userDetailsService=userDetailsService;
@@ -67,18 +61,14 @@ public class UserController {
         userEntity.setPassword(passwordEncoder.encode(users.getPassword()));
         model.addAttribute("success", "Form submitted successully");
         userService.addUser(userEntity);
-
-        UserDetails userDetails= userDetailsService.loadUserByUsername(userEntity.getUsername());
-        UsernamePasswordAuthenticationToken auToken = new UsernamePasswordAuthenticationToken( userDetails, null, userDetails.getAuthorities());
-        SecurityContextHolder.getContext().setAuthentication((auToken));
-
+        authenticatedUser(userEntity);
+        
         return "redirect:/";
     }
-    // @GetMapping("userid{id}")
-    // public ResponseEntity<UserPrincipal u> AccountSettings(@PathVariable int userid) {
+    private void authenticatedUser(UserEntity uEntity){
+        UserDetails userDetails= userDetailsService.loadUserByUsername(uEntity.getUsername());
+        UsernamePasswordAuthenticationToken auToken = new UsernamePasswordAuthenticationToken( userDetails, uEntity.getPassword() , userDetails.getAuthorities());
 
-
-    //     return "account";
-    // }
-    
+        SecurityContextHolder.getContext().setAuthentication(auToken);
+    }
 }

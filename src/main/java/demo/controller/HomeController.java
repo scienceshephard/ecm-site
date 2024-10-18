@@ -12,12 +12,10 @@ import demo.service.ProductService;
 
 @Controller
 @RequestMapping("/")
-public class HomeController{
+public class HomeController extends BaseController{
 
     @Autowired
     private ImageService imageService;
-
-
 
     @GetMapping("/images")
     public String getImage(@RequestParam(defaultValue = "nature") String query, Model model){
@@ -29,35 +27,38 @@ public class HomeController{
         }
         return "TemporaryImageTemplate";
     }
-    public static final String title= "Gadget Store";
     @GetMapping("/login")
-    String login(Model model){
-        model.addAttribute("title", title );
+    String login(){
         return "Admin/login";
     }
+    @GetMapping("/logout")
+    public String logout() {
+        return "logout";
+    }
+    
     @Autowired
     ProductService productService;
 
     @GetMapping
     public String Home(Model model){
-        model.addAttribute("title", title);
         return "index";
     }
 
     @GetMapping("/admin")
-    public String Admin(Model model){
-        model.addAttribute("title", title);
+    public String Admin(){
         return ("Admin/admin");
     }
     
     @GetMapping("/contact")
-    public String ContactPage(Model model){
-        model.addAttribute("title", title);
+    public String ContactPage(){
         return "contact";
     }
     @GetMapping("/about")
-    public String About(Model model){
-        model.addAttribute("title", title);
+    public String About(){
         return "about";
+    }
+    @GetMapping("/userid")
+    public String account(){
+        return "account";
     }
 }
