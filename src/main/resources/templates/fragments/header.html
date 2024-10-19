@@ -9,7 +9,8 @@
                 <a href="/">Home</a>
                 <a href="/contact">Contact</a>
                 <a href="/about">About</a>
-                <a href="/register">Sign-Up</a>
+                <a href="/register" th:if="${username == 'anonymousUser'}">Sign-Up</a>
+                <a href="/logout" th:if="${username != 'anonymousUser' }">Logout</a>
             </div>
         </div>
         <div class="nav-icons">

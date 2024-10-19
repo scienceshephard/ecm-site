@@ -1,11 +1,14 @@
 package demo.controller;
 
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.actuate.endpoint.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import demo.service.ImageService;
@@ -42,8 +45,13 @@ public class HomeController extends BaseController{
     HttpSession session;
 
     @GetMapping("/logout")
-    public String logout(HttpServletRequest req, HttpServletResponse resp) {
+    public String logout(HttpServletRequest req, HttpServletResponse resp, Model model) {
         SecurityContextHolder.clearContext();
+        if(SecurityContextHolder.getContext().getAuthentication()== null){
+            model.addAttribute("logout", "You have logged out Successfully!");
+            Logger logger= LoggerFactory.getLogger(getClass());
+            logger.info(model.getAttribute("username").toString());
+        }
         session.invalidate();
         Cookie[] cookies =  req.getCookies();
         if (cookies != null) {
@@ -51,9 +59,10 @@ public class HomeController extends BaseController{
                 cookie.setMaxAge(0);
                 resp.addCookie(cookie);
             }
+            
         }
 
-        return "redirect:Admin/login?logout";
+        return "Admin/login";
     }
     
     @Autowired
