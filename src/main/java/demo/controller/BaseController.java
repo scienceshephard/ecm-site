@@ -9,7 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 public class BaseController {
-    private static final Logger logger= LoggerFactory.getLogger(BaseController.class);
+    // private static final Logger logger= LoggerFactory.getLogger(BaseController.class);
     public static final String title= "Gadget Store";
     
     @ModelAttribute
@@ -22,7 +22,6 @@ public class BaseController {
         }else if (authentication != null){
             username = authentication.getName();
         }
-        logger.info("Username is: "+ username);
         if(username != null){
             model.addAttribute("username", username);
         }

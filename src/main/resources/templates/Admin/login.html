@@ -17,7 +17,7 @@
         <form th:action="@{/login}" class="form-login" method="post">
         <h1>Log In🤪</h1>
         <div class="error" th:if="${param.error}">Invalid Username or Password🙄</div>
-        <div class="error" th:if="${param.logout}">You have logged out 😑 </div>
+        <div class="error" th:if="${param.logout != null}">You have logged out 😑 </div>
             <div class="form">
                 <input type="text" name="username" placeholder="Username">
                 <input type="password" name="password" placeholder="Password">

@@ -63,7 +63,7 @@ public class UserController extends BaseController{
         userService.addUser(userEntity);
         authenticatedUser(userEntity);
         
-        return "redirect:/";
+        return "redirect:/login";
     }
     private void authenticatedUser(UserEntity uEntity){
         UserDetails userDetails= userDetailsService.loadUserByUsername(uEntity.getUsername());
