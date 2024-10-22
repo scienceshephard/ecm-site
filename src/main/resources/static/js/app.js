@@ -23,3 +23,6 @@ function arrowLeft(){
 function arrowRight() {
     console.log("arrow-right");
 }
+function searchbox(){
+    event.preventDefault()
+}

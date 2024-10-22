@@ -29,8 +29,16 @@
     height: 400px;
 }
 .error{
-    background-color: #ce1d1ddc;
-    width: 100%;
+    background-color: #e42626dc;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+.field{
+    display: flex;
+    width: 300px;
+    flex-wrap: wrap;
 }
 @media(max-width: 716px){
     .img-wrap{

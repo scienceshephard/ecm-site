@@ -17,19 +17,19 @@
             <form th:action="@{/register}" th:object="${user}" class="form-login" method="post">
             <h1>Sign Up🤪</h1>
                 <div class="form">
-                    <div>
+                    <div class="field">
                         <input type="text" name="username" th:field="*{Username}" placeholder="User Name">
                         <span th:if="${#fields.hasErrors('Username')}" class="error" th:errors="*{Username}"></span>
                     </div>
-                    <div>
+                    <div class="field">
                         <input type="email" name="email" th:field="*{Email}" placeholder="Email">
                         <span th:if="${#fields.hasErrors('Email')}" class="error" th:errors="*{Email}"></span>
                     </div>
-                    <div>
+                    <div class="field">
                         <input type="password" name="Password" th:field="*{Password}" placeholder="Password">
                         <span th:if="${#fields.hasErrors('Password')}" class="error" th:errors="*{Password}"></span>
                     </div>
-                    <div>
+                    <div class="field">
                         <input type="password" name="Confirm Password" th:field="*{ConfirmPassword}" placeholder="Confirm Password">
                         <span th:if="${#fields.hasErrors('ConfirmPassword')}" class="error" th:errors="*{ConfirmPassword}"></span>
                     </div>

@@ -19,6 +19,7 @@ public class BaseController {
         if(authentication!=null && authentication.getPrincipal() instanceof UserDetails){
             UserDetails userDetails= (UserDetails) authentication.getPrincipal();
             username= userDetails.getUsername();
+            
         }else if (authentication != null){
             username = authentication.getName();
         }

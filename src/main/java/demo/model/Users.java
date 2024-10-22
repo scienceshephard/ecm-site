@@ -13,7 +13,6 @@ import lombok.NoArgsConstructor;
 public class Users {
 
     @NotEmpty(message="Name is required")
-    @Size(min = 4, message = "Name must not be less than 4 characters")
     private String Username;
     
     @NotEmpty(message="Email is required")
