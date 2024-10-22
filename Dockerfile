@@ -1,10 +1,10 @@
-FROM maven:3.9.5-openjdk-21 AS mavenbuild
+FROM maven:3.9-sapmachine-21 AS mavenbuild
 
 COPY . .
 
 RUN mvn clean package -DskipTests
 
-FROM openjdk:21-jdk
+FROM openjdk:21-ea-1-slim
 
 COPY --from=mavenbuild /target/ecm-site-0.0.1-SNAPSHOT.jar ecm-site.jar
 
