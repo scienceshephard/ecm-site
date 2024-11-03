@@ -29,6 +29,7 @@
     height: 400px;
 }
 .error{
+    display: flex;
     background-color: #e42626dc;
     color: white;
     border-radius: 10px;
