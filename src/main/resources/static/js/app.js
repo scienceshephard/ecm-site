@@ -1,5 +1,5 @@
 
-var menuBtn= true
+var menuBtn= false
 
 const menu=document.getElementById("menubtn")
 const navLinks= document.getElementById("nav-links")

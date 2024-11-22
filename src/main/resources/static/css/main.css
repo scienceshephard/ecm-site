@@ -326,17 +326,17 @@ button:hover{
     .MainLinks-mobile{
         display: flex;
         position: absolute;
+        flex-direction: column;
         justify-content: space-around;
         top: 80px;
         left: 0;
-        width: 100vw;
+        width: 30vw;
         background-color: #db2626a9;
-        font-size: 18px;
         font-weight: 700;
         
         >a{
-            padding: 20px;
-            color: black;
+            padding: 10px;
+            color: white;
             border-bottom: solid 1px #db2626a9;
         }
         >a:hover{
