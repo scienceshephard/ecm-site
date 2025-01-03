@@ -3,9 +3,7 @@ var menuBtn= false
 
 const menu=document.getElementById("menubtn")
 const navLinks= document.getElementById("nav-links")
-
-menu.addEventListener('click', function(event){
-    event.preventDefault();
+function ShowMobileNav() {
     menuBtn= !menuBtn 
     if(menuBtn){
         navLinks.classList.remove("MainLinks-default")
@@ -15,7 +13,20 @@ menu.addEventListener('click', function(event){
         navLinks.classList.remove("MainLinks-mobile");
         navLinks.classList.add("MainLinks-default")
     }
-})
+}
+var userdiv = false
+const user = document.getElementById("user")
+function showUserdiv(){
+    event.preventDefault()
+    userdiv = !userdiv
+    if(userdiv){
+        user.classList.remove("User-default")
+        user.classList.add("User-mobile")
+    }else{
+        user.classList.remove("User-mobile")
+        user.classList.add("User-default")
+    }
+}
 
 function arrowLeft(){
     console.log("arrow-left");

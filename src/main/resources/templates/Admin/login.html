@@ -14,12 +14,11 @@
     
     <div class="wrapper form-container">
         <div class="img-wrap"></div>
-        
-        <div class="error" th:if="${param.error}">Invalid Username or Password🙄</div>
-        <div class="error" th:if="${param.logout}">You have logged out.</div>
         <form th:action="@{/login}" class="form-login" method="post">
         <h1>Log In🤪</h1>
             <div class="form">
+                <div class="error" th:if="${param.error}">Invalid Username or Password.🙄</div>
+                <div class="error" th:if="${param.logout}">You have logged out.🙄</div>
                 <input type="text" name="username" placeholder="Username">
                 <input type="password" name="password" placeholder="Password">
             </div>

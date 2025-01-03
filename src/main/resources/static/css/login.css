@@ -29,12 +29,12 @@
     height: 400px;
 }
 .error{
-    display: flex;
     background-color: #e42626dc;
     color: white;
     border-radius: 10px;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
+    width: fit-content;
 }
 .field{
     display: flex;

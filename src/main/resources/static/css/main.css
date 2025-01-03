@@ -59,6 +59,16 @@ h1{
     width: 30vw;
     justify-content: space-between;
 }
+.User-mobile{
+    display: none;
+}
+.User-default{
+    position: absolute;
+    background-color: red;
+    right: 0;
+    top: 60px;
+    padding: 6px;
+}
 #menubtn{
     display: none;
 }
@@ -281,6 +291,11 @@ button:hover{
         font-family: monospace;
     }
 }
+/* @media screen and (max-width:352px) {
+    .header{
+        display: none;
+    }
+} */
 @media (max-width: 416px){
     .footer-cards{
         flex-direction: column;
@@ -291,6 +306,11 @@ button:hover{
     }
     .email-container{
         width: fit-content;
+    }
+}
+@media (max-width: 469px) {
+    #nav-links{
+        top: 75px;
     }
 }
 @media (max-width:535px){
@@ -307,8 +327,18 @@ button:hover{
     .navbar-nav h1{
         display: none;
     }
+    .navbar-nav .nav-links{
+        margin-left: 0px;
+    }
 }
-@media (max-width:530px){
+/* A mobile view port */
+@media screen and (max-width:530px){
+    *{
+        font-size: 12px;
+    }
+    .navbar-nav h1 a{
+        font-size: 20px;
+    }
     .time{
         display: none;
     }
@@ -320,6 +350,11 @@ button:hover{
     #menubtn{
         display: flex;
     }
+    #menubtn:active{
+        background-color: transparent;
+        border: 1px solid #808080;
+    }
+
     .MainLinks-default{
         display: none;
     }
@@ -348,5 +383,18 @@ button:hover{
         align-items: center;
         margin-left: auto;
         margin-right: 10px;
+    }   
+}
+@media screen and (max-width:846px) {
+    .last-section{
+        justify-content: center;
+    }
+    .last-section-card{
+        margin: 10px;
+    }
+}
+@media screen and (max-width: 852px) {
+    .last-section{
+        gap: 3px;
     }
 }
