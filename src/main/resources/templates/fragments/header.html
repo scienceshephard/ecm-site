@@ -19,9 +19,9 @@
             </div>              
                 <a href="/favorite"><img class="img-icons" th:src="@{/images/heart.svg}" alt="heart"></a>
                 <a href="/cart"><img class="img-icons" th:src="@{/images/cart-plus.svg}" alt="cart"></a>
-                <a href="/userid" onclick="showUserdiv()" ><img class="img-icons" th:src="@{/images/user-circle.svg}" alt="user-circle"></a>
+                <button onclick="showUserdiv()"><img class="img-icons" th:src="@{/images/user-circle.svg}" alt="user-circle"></button>
                 
-            <div class="User-default" id="user" >
+            <div class="User-mobile" id="user" >
                 <a href="/login" th:if="${username == 'anonymousUser' }">Sign in</a>
                 <a href="/logout" th:if="${username != 'anonymousUser' }">Logout</a>
             </div>

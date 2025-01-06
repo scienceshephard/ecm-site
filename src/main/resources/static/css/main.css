@@ -64,10 +64,13 @@ h1{
 }
 .User-default{
     position: absolute;
-    background-color: red;
+    background-color: #db2626a9;
     right: 0;
-    top: 60px;
+    top: 62px;
     padding: 6px;
+    >a{
+        color: white;
+    }
 }
 #menubtn{
     display: none;
@@ -241,19 +244,20 @@ section{
     margin-top: 20px;
     overflow: hidden;
 }
-.arrows{
-    >button{
+.view-btn{
         font-size: 18px;
         width: fit-content;
         margin-right: auto;
         margin-left: auto;
-        padding: 15px 25px 15px 25px; /* top right bottom left*/
+        padding: 15px 25px 15px 25px; /*top right bottom left*/
         background-color: #ff0000c6;
         color: white;
         margin-top: 20px;
         margin-bottom: 20px;
         border-radius: 5px;
-    }
+}
+.arrow-btn{
+    border-radius: 20px;
 }
 #procr{
     justify-content: space-between;
