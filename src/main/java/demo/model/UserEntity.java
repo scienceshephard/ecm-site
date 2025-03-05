@@ -26,7 +26,7 @@ public class UserEntity {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int Id;
 
-    @NotEmpty(message = "Name is required")
+    @NotEmpty(  message = "Name is required")
     @Size(min = 4, message = "Name must not be less than 4 characters")
     private String username;
 

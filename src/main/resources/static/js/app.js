@@ -27,15 +27,11 @@ function showUserdiv(){
     
 }
 
-function arrowLeft(){
-    console.log("arrow-left");
-}
-function arrowRight() {
-    console.log("arrow-right");
-}
+//Search Button event Listeners
 function searchbox(){
     event.preventDefault()
 }
+
 
 //clock
 const days= ["Sunday", "Monday", "Tuesday", "Wednessday","Thursday", "Friday", "Saturday"]
@@ -70,23 +66,42 @@ function clock() {
     ` 
 }
 setInterval(clock, 1000)
-clock();
+clock()
 
 
-{/* <span>Days</span>
-<h1>03</h1>
-</div>
-<h1>:</h1>
-<div class="duration">
-<span>Hours</span>
-<h1>07</h1>
-</div>
-<h1>:</h1>
-<div class="duration">
-<span>Minutes</span>
-<h1>03</h1>
-</div>
-<h1>:</h1>
-<div class="duration">
-<span>Seconds</span>
-<h1>03</h1> */}
+
+
+async function fetchApiKey() {
+    try{
+        let reposnse = await fetch('/api/key');
+        let data = await reposnse.json();
+        return data.accessKey;
+    }catch(error){
+        console.log("Error fetching the API key: "+error);
+        return null;
+        
+    }
+}
+
+async function fetchRandomImages() {
+    let apiKey = await fetchApiKey();
+    if(!apiKey){
+        console.error("API key not found");
+        return;
+    }
+    try{
+        let reponse = await fetch(`https://api.unsplash.com/photos/random?count=5&client_id=${apiKey}`);
+        let data = await reponse.json();
+        let products = document.getElementById("products-img-card");
+        products.innerHTML="";
+        data.forEach(img => {
+            let imageElement = document.createElement('img');
+            imageElement.src = img.urls.small;
+            imageElement.alt = img.alt_description || "Unsplash Image";
+            imageContainer.appendChild(imageElement);
+        });
+    } catch (error) {
+        console.error("Error fetching images:", error);
+        
+    }
+}

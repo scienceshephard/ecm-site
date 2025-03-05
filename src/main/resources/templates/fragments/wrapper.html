@@ -15,55 +15,57 @@
             <h1>Flash Sales</h1>
             <div class="time"></div>
             <div class="arrows">
-                <button class="arrow-btn">
-                    <img class="arrow-img-icons"id="arrow" onclick="arrowLeft()" th:src="@{/images/arrow-left.svg}" alt="arrow-left">
+                <button class="arrow-btn" id="arrowLeft">
+                    <img class="arrow-img-icons" id="arrow-left" th:src="@{/images/arrow-left.svg}" alt="arrow-left">
                 </button>
-                <button class="arrow-btn">
-                    <img class="arrow-img-icons"id="arrow" onclick="arrowRight()" th:src="@{/images/arrow-right.svg}" alt="arrow-right">
+                <button class="arrow-btn" onclick="fetchImages()" id="arrowRight">
+                    <img class="arrow-img-icons"id="arrow-right" th:src="@{/images/arrow-right.svg}" alt="arrow-right">
                 </button>
             </div>
         </div>
-        <div class="products-card">
-            <div class="card">
-                <div class="products-img-card"></div>
-                <div class="products-card-content">
-                    <h5>Lorem ipsum dolor sit amet</h5>
+        <div class="product-image-slider">
+            <div class="products-card">
+                <div class="card">
+                    <div id="products-img-card"></div>
+                    <div class="products-card-content">
+                        <h5>Lorem ipsum dolor sit amet</h5>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="products-img-card"></div>
-                <div class="products-card-content">
-                    <h5>Lorem ipsum dolor sit amet</h5>
+                <div class="card">
+                    <div id="products-img-card"></div>
+                    <div class="products-card-content">
+                        <h5>Lorem ipsum dolor sit amet</h5>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="products-img-card"></div>
-                <div class="products-card-content">
-                    <h5>Lorem ipsum dolor sit amet</h5>
+                <div class="card">
+                    <div id="products-img-card"></div>
+                    <div class="products-card-content">
+                        <h5>Lorem ipsum dolor sit amet</h5>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="products-img-card"></div>
-                <div class="products-card-content">
-                    <h5>Lorem ipsum dolor sit amet</h5>
+                <div class="card">
+                    <div id="products-img-card"></div>
+                    <div class="products-card-content">
+                        <h5>Lorem ipsum dolor sit amet</h5>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="products-img-card"></div>
-                <div class="products-card-content">
-                    <h5>Lorem ipsum dolor sit amet</h5>
+                <div class="card">
+                    <div id="products-img-card"></div>
+                    <div class="products-card-content">
+                        <h5>Lorem ipsum dolor sit amet</h5>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="products-img-card"></div>
-                <div class="products-card-content">
-                    <h5>Lorem ipsum dolor sit amet</h5>
+                <div class="card">
+                    <div id="products-img-card"></div>
+                    <div class="products-card-content">
+                        <h5>Lorem ipsum dolor sit amet</h5>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="products-img-card"></div>
-                <div class="products-card-content">
-                    <h5>Lorem ipsum dolor sit amet</h5>
+                <div class="card">
+                    <div id="products-img-card"></div>
+                    <div class="products-card-content">
+                        <h5>Lorem ipsum dolor sit amet</h5>
+                    </div>
                 </div>
             </div>
         </div>

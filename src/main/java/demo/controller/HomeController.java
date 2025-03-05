@@ -1,18 +1,11 @@
 package demo.controller;
 
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import demo.service.ImageService;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -23,19 +16,7 @@ import jakarta.servlet.http.HttpSession;
 @RequestMapping("/")
 public class HomeController extends BaseController{
 
-    @Autowired
-    private ImageService imageService;
-
-    @GetMapping("/images")
-    public String getImage(@RequestParam(defaultValue = "nature") String query, Model model){
-        String imageurl=imageService.fetchRandomImages(query);
-        if(imageurl!=null){
-            model.addAttribute("imageUrl", imageurl);
-        }else {
-            model.addAttribute("error", "Could not fetch please try again");
-        }
-        return "TemporaryImageTemplate";
-    }
+    
     @GetMapping("/login")
     String login(){
         return "Admin/login";

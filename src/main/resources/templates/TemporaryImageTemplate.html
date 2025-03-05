@@ -3,14 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Image Template</title>
+    <script>
+        function fetchNewCar() {
+            fetch('/api/random-car-image')
+                .then(response => response.text())
+                .then(imgUrl =>{
+                    const imgContainer = document.getElementById('new-img');
+                    imgContainer.innerHTML = `<img src="${imageUrl}" alt="Random Car" style="width:100%; max-width: 500px; margin: 10px 0;"/>`
+                })
+                .catch(error => console.error('Error fetching img', error));
+        }
+    </script>
 </head>
 <body>
-    <h1>Random Image from Pexels</h1>
-    <div th:if="${imageUrl != null}">
-        <img th:src="${imageUrl}" alt="Random Image" style="max-width:100%; height:auto;"/>
+    <h1>Random Car Images</h1>
+    <div id="image-gallery" style="display: flex; flex-wrap: wrap; gap: 10px;">
+        <div th:each="image : ${images}" style="flex: 1 1 calc(20% - 10px);">
+            <img th:src="${image}" alt="Random Car" style="width: 100%;"/>
+        </div>
     </div>
-    <div th:if="${errorMessage != null}">
-        <p th:text="${errorMessage}"></p>
-    </div>
+
+    <button onclick="fetchNewCarImage()">Fetch New Image</button>
+    <div id="new-image"></div>
 </body>
 </html>
