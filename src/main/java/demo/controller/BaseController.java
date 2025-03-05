@@ -7,7 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 public class BaseController {
-    // private static final Logger logger= LoggerFactory.getLogger(BaseController.class);
     public static final String title= "Gadget Store";
     
     @ModelAttribute

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
 @Controller
@@ -23,6 +24,7 @@ public class ImageController {
     private static final Logger logger = LoggerFactory.getLogger(ImageController.class);
 
     @GetMapping("/random")
+    @ResponseBody  
     public List<Map<String, Object>> getRandomImages(@RequestParam(defaultValue = "5") int count) {
         RestTemplate restTemplate = new RestTemplate();
         String url = UNSPLASH_URL + accessKey+"&count="+count;
