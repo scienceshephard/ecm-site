@@ -1,6 +1,5 @@
 <div class="wrapper" th:fragment="wrapper">
-    <div class="header-list">
-        
+    <div class="header-list">        
         <div class="card-iphone">
             <h1>Up to 10% Voucher</h1>
             <a href="/shop">Shop Now</a>
@@ -18,94 +17,16 @@
                 <button class="arrow-btn" id="arrowLeft">
                     <img class="arrow-img-icons" id="arrow-left" th:src="@{/images/arrow-left.svg}" alt="arrow-left">
                 </button>
-                <button class="arrow-btn" onclick="fetchImages()" id="arrowRight">
+                <button class="arrow-btn" onclick="addNewTechImage()" id="arrowRight">
                     <img class="arrow-img-icons"id="arrow-right" th:src="@{/images/arrow-right.svg}" alt="arrow-right">
                 </button>
             </div>
         </div>
         <div class="product-image-slider">
-            <div class="products-card">
-                <div class="card">
-                    <div id="products-img-card"></div>
-                    <div class="products-card-content">
-                        <h5>Lorem ipsum dolor sit amet</h5>
-                    </div>
-                </div>
-                <div class="card">
-                    <div id="products-img-card"></div>
-                    <div class="products-card-content">
-                        <h5>Lorem ipsum dolor sit amet</h5>
-                    </div>
-                </div>
-                <div class="card">
-                    <div id="products-img-card"></div>
-                    <div class="products-card-content">
-                        <h5>Lorem ipsum dolor sit amet</h5>
-                    </div>
-                </div>
-                <div class="card">
-                    <div id="products-img-card"></div>
-                    <div class="products-card-content">
-                        <h5>Lorem ipsum dolor sit amet</h5>
-                    </div>
-                </div>
-                <div class="card">
-                    <div id="products-img-card"></div>
-                    <div class="products-card-content">
-                        <h5>Lorem ipsum dolor sit amet</h5>
-                    </div>
-                </div>
-                <div class="card">
-                    <div id="products-img-card"></div>
-                    <div class="products-card-content">
-                        <h5>Lorem ipsum dolor sit amet</h5>
-                    </div>
-                </div>
-                <div class="card">
-                    <div id="products-img-card"></div>
-                    <div class="products-card-content">
-                        <h5>Lorem ipsum dolor sit amet</h5>
-                    </div>
-                </div>
-            </div>
+            <div class="products-card"></div>
         </div>
         <div class="btn">
             <button>View All Products</button>
-        </div>
-    </section>
-    <section class="bottom-border">
-        <div class="today">
-            <div class="today-red"></div>
-            Categories
-        </div>
-        <div class="flash">
-            <h1>Browse by category</h1>
-        <div class="arrows">
-            <button class="arrow-btn">
-                <img class="arrow-img-icons"id="arrow" onclick="arrowLeft()" th:src="@{/images/arrow-left.svg}" alt="arrow-left">
-            </button>
-            <button class="arrow-btn">
-                <img class="arrow-img-icons"id="arrow" onclick="arrowRight()" th:src="@{/images/arrow-right.svg}" alt="arrow-right">
-            </button>
-        </div>
-        </div>
-        <div class="category-card">
-            <div class="card">
-                <div class="cat-img">Phones</div>    
-            </div>
-            <div class="card">
-                <div class="cat-img">Computer</div>
-            </div>
-            <div class="card">
-                <div class="cat-img">SmartWatch</div>
-                
-            </div>
-            <div class="card">
-                <div class="cat-img">Headphones</div>
-            </div>
-            <div class="card">
-                <div class="cat-img">Gaming</div>
-            </div>
         </div>
     </section>
     <section class="bottom-border">
@@ -120,7 +41,7 @@
         </div>
         </div>
         
-        <div class="products-card" id="procr">
+        <div class="products-card product-image-slider" id="procr">
             <div class="card">
                 <div class="products-img-card"></div>
                 <div class="products-card-content">
