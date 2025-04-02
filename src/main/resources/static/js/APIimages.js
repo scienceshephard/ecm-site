@@ -30,7 +30,7 @@ async function loadInitialTechImages() {
                 <img src="${image.urls.regular}" alt="Tech Image" class="fade-in">
             </div>
             <div class="products-card-content">
-                <h5>${image.alt_description || "Tech Image"}</h5>
+                ${image.alt_description || "Tech Image"}
             </div>
         `;
         imageSlider.appendChild(card);
@@ -55,7 +55,7 @@ async function addNewTechImage() {
             <img src="${newImage[0].urls.regular}" alt="New Tech Image" class="fade-in">
         </div>
         <div class="products-card-content">
-            <h5>${newImage[0].alt_description || "Tech Image"}</h5>
+            ${newImage[0].alt_description || "Tech Image"}
         </div>
     `;
 
@@ -91,7 +91,7 @@ async function loadInitialGamesImages() {
                 <img src="${image.urls.regular}" alt="Tech Image" class="fade-in">
             </div>
             <div class="products-card-content">
-                <h5>${image.alt_description || "Tech Image"}</h5>
+                ${image.alt_description || "Tech Image"}
             </div>
         `;
         imageSlider.appendChild(card);
@@ -128,7 +128,7 @@ async function loadInitialHeadphonesImages() {
                 <img src="${image.urls.regular}" alt="Tech Image" class="fade-in">
             </div>
             <div class="products-card-content">
-                <h5>${image.alt_description || "Tech Image"}</h5>
+                ${image.alt_description || "Tech Image"}
             </div>
         `;
         imageSlider.appendChild(card);
@@ -165,7 +165,7 @@ async function fetchSmartWatchImages() {
                 <img src="${image.urls.regular}" alt="Tech Image" class="fade-in">
             </div>
             <div class="products-card-content">
-                <h5>${image.alt_description || "Tech Image"}</h5>
+                ${image.alt_description || "Tech Image"}
             </div>
         `;
         imageSlider.appendChild(card);

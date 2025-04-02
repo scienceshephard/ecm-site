@@ -152,10 +152,22 @@ footer{
     margin-bottom: 50px;
 }
 .card-iphone{
-    border: 1px solid;
     width: 700px;
     margin-left: auto;
     height: 200px;
+    position: relative;
+    display: flex;
+        >img{
+            width: 100%;
+            /* height: fit-content; */
+        }
+        >h1, a{
+            position: absolute;
+            left: 20px;
+        }
+        >h1{
+            top: 150px;
+        }
 }
 section{
     display: flex;
@@ -209,13 +221,8 @@ section{
     display: flex;
     gap: 25px;
     margin-top: 20px;
+    padding: 10px;
     transition: transform 0.5s ease-in-out;
-}
-.card:hover{
-    vertical-align: middle;
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px  rgba(0, 0, 0, 0);
-    border: 1px solid red;
 }
 /* Style for the image slider */
 .product-image-slider {
@@ -231,7 +238,16 @@ section{
     border-radius: 10px;
     overflow: hidden;
     background: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.card:hover{
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 4px 6px #000000e1;
+}
+.products-card-content{
+    text-align: center;
+    white-space: normal;
+    overflow:hidden;
+    font-size: 1.3rem;
 }
 .products-img-card{
     width: 100%;
