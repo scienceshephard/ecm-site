@@ -26,13 +26,14 @@ async function loadInitialTechImages() {
         const card = document.createElement("div");
         card.classList.add("card");
         card.innerHTML = `
-            <div class="products-img-card" onclick="${viewCurrentProduct(image.user.id)}">
+            <div class="products-img-card">
                 <img src="${image.urls.regular}" alt="Tech Image" class="fade-in">
             </div>
             <div class="products-card-content">
                 ${image.alt_description || "Tech Image"}
             </div>
         `;
+        card.addEventListener("click", ()=> viewCurrentProduct(image.user.id));
         // console.log(image);
         
         imageSlider.appendChild(card);
@@ -54,14 +55,14 @@ async function addNewTechImage() {
     const card = document.createElement("div");
     card.classList.add("card");
     card.innerHTML = `
-        <div class="products-img-card" onclick="${viewCurrentProduct(newImage[0].user.id)}">
+        <div class="products-img-card">
             <img src="${newImage[0].urls.regular}" alt="New Tech Image" class="fade-in">
         </div>
         <div class="products-card-content">
             ${newImage[0].alt_description || "Tech Image"}
         </div>
     `;
-
+    card.addEventListener("click", ()=> viewCurrentProduct(newImage[0].user.id))
     imageSlider.appendChild(card); // Append new image to the end
 }
 
