@@ -1,9 +1,7 @@
 <div class="wrapper" th:fragment="wrapper">
     <div class="header-list">        
         <div class="card-iphone">
-            <img th:src="@{/images/sahej-brar-uzlwdoUBlNc-unsplash.jpg}" alt="">
-            <h1>Up to 10% Voucher</h1>
-            <a href="/shop">Shop Now</a>
+            <p>adds</p>
         </div>
     </div>
     <section id="latest-product">
@@ -24,7 +22,8 @@
             </div>
         </div>
         <div class="product-image-slider">
-            <div class="products-card"></div>
+            <div class="overlay" id="overlay"></div> <!-- Background blur effect -->
+            <div class="products-card" id="productsContainer"></div>
         </div>
         <div class="btn">
             <button>View All Products</button>
@@ -59,9 +58,6 @@
                 <div class="products-img-card"></div>
                 <div class="products-card-content">Camera</div>
             </div>
-        </div>
-        <div class="btn" style="border-bottom: none;">
-            <button>View All Products</button>
         </div>
     </section>
     <section class="last-section">
