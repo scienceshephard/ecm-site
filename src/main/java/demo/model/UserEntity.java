@@ -1,23 +1,16 @@
 package demo.model;
 
 
+import org.springframework.stereotype.Component;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import jakarta.persistence.Id;
 
-import org.springframework.stereotype.Component;
-
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
 @Entity
 @Component
 public class UserEntity {
@@ -36,5 +29,30 @@ public class UserEntity {
 
     @NotEmpty(message = "Password is Required")
     private String Password;
+
+    
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
+    }
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String password) {
+        Password = password;
+    }
 
 }

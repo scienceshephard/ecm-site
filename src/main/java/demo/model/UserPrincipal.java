@@ -1,14 +1,11 @@
 package demo.model;
+import java.util.Collection;
+import java.util.Collections;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import lombok.NoArgsConstructor;
-
-import java.util.Collection;
-import java.util.Collections;
-
-@NoArgsConstructor
 public class UserPrincipal implements UserDetails {
 
     private UserEntity userEntity;

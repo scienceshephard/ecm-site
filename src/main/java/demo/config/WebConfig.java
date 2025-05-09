@@ -11,11 +11,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.client.RestTemplate;
 
-import lombok.NoArgsConstructor;
-
 @Configuration
 @EnableWebSecurity
-@NoArgsConstructor
 public class WebConfig {
 
     @Autowired

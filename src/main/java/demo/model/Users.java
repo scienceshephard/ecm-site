@@ -3,13 +3,6 @@ package demo.model;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@NoArgsConstructor
-@Data
-@AllArgsConstructor
 public class Users {
 
     @NotEmpty(message="Name is required")
@@ -26,8 +19,41 @@ public class Users {
     @NotEmpty(message="Confirm Password is required")
     private String ConfirmPassword;
 
+    
     public boolean isPasswordMatching(){
         return this.Password != null && this.Password.equals(this.ConfirmPassword);
+    }
+
+    public String getUsername() {
+        return Username;
+    }
+
+    public void setUsername(String Username) {
+        this.Username = Username;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String Email) {
+        this.Email = Email;
+    }
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String Password) {
+        this.Password = Password;
+    }
+
+    public String getConfirmPassword() {
+        return ConfirmPassword;
+    }
+
+    public void setConfirmPassword(String ConfirmPassword) {
+        this.ConfirmPassword = ConfirmPassword;
     }
 
 }
