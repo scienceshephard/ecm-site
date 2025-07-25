@@ -1,7 +1,6 @@
 const categories={"gadgets":"gadgets", "laptop":"laptop","gaming":"gaming","phone":"phone","camera":"camera","headphones":"headphones","watch":"watch"};
 
 // Function to fetch laptop images from the backend
-// const url = `/api/images/gadgets/${categories.laptop}?count=${count}`;
 async function fetchTechImages(count) {
     try {
         const response = await fetch(`/api/images/${categories.gadgets}?count=${count}`);
@@ -16,11 +15,16 @@ async function fetchTechImages(count) {
 
 // Function to load initial 8 images on page load
 async function loadInitialTechImages() {
+    await new Promise(resolve => setTimeout(resolve, 3000)); // Simulate a delay for the animation
     const images = await fetchTechImages(8);
+    
     if (!images) return;
 
     const imageSlider = document.querySelector(".products-card");
     imageSlider.innerHTML = ""; // Clear any existing images
+
+    const ProdAnimation= document.querySelector(".products-card-animate");
+    ProdAnimation.style.display = "none"; // Hide the animation overlay
 
     images.forEach((image) => {
         const card = document.createElement("div");
@@ -47,11 +51,11 @@ document.addEventListener("DOMContentLoaded", loadInitialTechImages);
 
 // Function to fetch and add a new image
 async function addNewTechImage() {
+    await new Promise(resolve => setTimeout(resolve, 3000)); // Simulate a delay for the animation
     const newImage = await fetchTechImages(1);
     if (!newImage || newImage.length === 0) return;
 
     const imageSlider = document.querySelector(".products-card");
-
     const card = document.createElement("div");
     card.classList.add("card");
     card.innerHTML = `

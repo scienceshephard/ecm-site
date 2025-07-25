@@ -1,31 +1,53 @@
-
-        <header class="header">Summer Sale for all Swim Suits And Free Delivery -OFF 50%<a href="/cart" class="text-decoration-none">Shop Now</a></header>
-        <nav th:fragment="header" class="navbar">
-    <div class="navbar-nav">
-        <h1><a href="/">Shephards✌</a></h1>
-        <div class="nav-links">
-            <button id="menubtn" onclick="ShowMobileNav()"><img class="img-icons menuIcon" th:src="@{/images/menu-fill.svg}" alt="Menu-fill"></button>
-            <div class="MainLinks-default" id="nav-links" >
-                <a href="/register" th:if="${username == 'anonymousUser'}">Sign-Up</a>
-                <a href="/contact">Contact</a>
-                <a href="/about">About</a>
-                <a href="/logout" th:if="${username != 'anonymousUser' }">Logout</a>
-            </div>
-        </div>
-        <div class="nav-icons">
-            <div class="search-box">
-                <input type="search" placeholder="What are you looking for?" class="search-input">
-                <a href="/" onclick="searchbox()"><img class="img-icons" th:src="@{/images/search.svg}" alt="search"></a>
-            </div>              
-                <a href="/favorite"><img class="img-icons" th:src="@{/images/heart.svg}" alt="heart"></a>
-                <a href="/cart"><img class="img-icons" th:src="@{/images/cart-plus.svg}" alt="cart"></a>
-                <button onclick="showUserdiv()"><img class="img-icons" th:src="@{/images/user-circle.svg}" alt="user-circle"></button>
-                
-            <div class="User-mobile" id="user" >
-                <a href="/login" th:if="${username == 'anonymousUser' }">Sign in</a>
-                <a href="/logout" th:if="${username != 'anonymousUser' }">Logout</a>
-            </div>
-
-        </div>
+<header class="header">
+  Summer Sale for all Swim Suits And Free Delivery -OFF 50%<a
+    href="/cart"
+    class="text-decoration-none"
+    >Shop Now</a
+  >
+</header>
+<nav th:fragment="header" class="navbar">
+  <div class="navbar-nav">
+    <h1><a href="/">Shephards✌</a></h1>
+    <div class="nav-links">
+      <button id="menubtn" onclick="ShowMobileNav()">
+        <img
+          class="img-icons menuIcon"
+          th:src="@{/images/menu-fill.svg}"
+          alt="Menu-fill"
+        />
+      </button>
+      <div class="MainLinks-default" id="nav-links">
+        <a href="/register" th:if="${username == 'anonymousUser'}">Sign-Up</a>
+        <a href="/contact">Contact</a>
+        <a href="/about">About</a>
+        <a href="/logout" th:if="${username != 'anonymousUser' }">Logout</a>
+      </div>
     </div>
+    <div class="nav-icons">
+      <div class="search-box">
+        <input
+          type="search"
+          placeholder="What are you looking for?"
+          class="search-input"
+        />
+        <a href="/" onclick="searchbox()">
+          <i class="bi bi-search"></i>
+        </a>
+      </div>
+      <a href="/favorite">
+        <div class="bi bi-heart"></div>
+      </a>
+      <a href="/cart">
+        <i class="bi bi-cart"></i>
+      </a>
+      <button onclick="showUserdiv()">
+        <i class="bi bi-person-circle"></i>
+      </button>
+
+      <div class="User-mobile" id="user">
+        <a href="/login" th:if="${username == 'anonymousUser' }">Sign in</a>
+        <a href="/logout" th:if="${username != 'anonymousUser' }">Logout</a>
+      </div>
+    </div>
+  </div>
 </nav>

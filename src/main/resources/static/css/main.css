@@ -1,7 +1,11 @@
+:root{
+    --font-resizable: clamp(2rem, 3vw, 3rem);
+}
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-size: clamp(1rem, 2vw, 1.1rem );
 }
 html,body{
     height: 100%;
@@ -28,6 +32,40 @@ a:hover{
     color: white;
     text-align: center;
 }
+.boom-section-card{
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    color: #FAFAFA;
+    padding: 30px 40px;
+    justify-content: space-between;
+    width: 70%;
+    margin-inline: auto;
+    position: relative;
+}
+.boom-section-card button{
+    padding: 15px 40px;
+    background-color: #00FF66;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    margin-top: auto;
+    width: fit-content;
+}
+.boom-section-card div:nth-child(1){
+    display: flex;
+    flex-direction: column;
+}
+.boom-section-card h1{
+    font-size: var(--font-resizable);
+}
+.boom-section-card img{
+    background: linear-gradient(to right, transparent,rgba(255,255,255,0.2), rgba(255,255,255,0.05), transparent);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    color: #fff;
+}
 .navbar-nav{
     display: flex;
     width: 90vw;
@@ -35,6 +73,7 @@ a:hover{
     margin-right: auto;
     justify-content: space-between;
     > h1> a{
+        font-size: 2rem;
         color: inherit;
     }
 }
@@ -44,9 +83,13 @@ h1{
 }
 .navbar{
     width: 100%;
-    border-bottom: 1px solid;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding: min(20px, 10%) 0;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 2px 6px #000000e1;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
 }
 .nav-links{
     display: flex;
@@ -83,13 +126,6 @@ h1{
 .img-icons{
     width: 20px;
 }
-.arrow-img-icons{
-    width: 30px;
-    height: 30px;
-    border: 100px;
-    padding: 4px;
-    cursor: pointer;
-}
 .search-box{
     border: 1px outset #000000b9;
     padding: 8px;
@@ -98,9 +134,9 @@ h1{
 }
 input{
     outline: none;
+    border: none;
     width: 180px;
-    border: 1px solid;
-    border-style: unset;
+    background-color: transparent;
 }
 footer{
     background-color: black;
@@ -130,7 +166,12 @@ footer{
     border: 1px solid white;
     display: flex;
     padding: 10px;
-    background-color: white;
+    color: white;
+}
+.arrow-up{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
 }
 .wrapper{
     margin-top: 20px;
@@ -140,7 +181,9 @@ footer{
     margin-right: auto;
     margin-left: auto;
     width: 90vw;
-
+    /* animation: showheader-list both;
+    animation-timeline: view();
+    animation-range: entry 80vh cover 60vh; */
     >ul{
         border-right: 1px solid #ff0000c6;
         display: flex;
@@ -154,8 +197,31 @@ footer{
 .card-iphone{
     width: 70%;
     margin-left: auto;
-    height: 200px;
-    border: 1px solid black;
+    overflow-x: hidden;
+    display: flex;
+    color: white;
+    background-color: black;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.card-iphone div{
+    /* width: 30%; */
+    padding: 20px;
+}
+.card-iphone div h1{
+    font-size: var(--font-resizable);
+    /* font-size: 3rem; */
+}
+.card-iphone a{
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    font-size: 1.8rem;
+}
+img{
+    object-fit: contain;
+    height: auto;
+    max-width: 100%;
 }
 section{
     display: flex;
@@ -224,13 +290,18 @@ section{
     min-width: 200px;
     max-width: 250px;
     border-radius: 10px;
+    height: 200px;
     overflow: hidden;
-    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid #00000031;
 }
 .card:hover{
+    cursor: pointer;
     transform: perspective(1px) translateZ(0);
     box-shadow: 0 4px 6px #000000e1;
-    cursor: pointer;
 }
 .products-card-content{
     text-align: center;
@@ -247,10 +318,21 @@ section{
     align-items: center;
     border-radius: 10px 10px 0 0;
 }
-.products-img-card img {
-    width: 100%;
+.products-img-card img{
     height: fit-content;
     display: flex;
+    border-radius: 10px 10px 0 0;
+}
+.products-card-animate{
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+}
+#products-animation{
+    min-width: 200px;
+    max-width: 250px;
+    background-color: rgba(175, 175, 175, 0.966);
+    animation: faeInOut 2s infinite;
     border-radius: 10px 10px 0 0;
 }
 
@@ -259,7 +341,14 @@ section{
     opacity: 0;
     animation: fadeIn 0.8s ease-in forwards;
 }
-
+@keyframes faeInOut{
+    0%, 100% {
+        opacity: -1;
+      }
+      50% {
+        opacity: 1;
+      }
+}
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -268,6 +357,16 @@ section{
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+@keyframes showheader-list {
+    from{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 
@@ -326,11 +425,24 @@ section{
 }
 .arrow-btn{
     border-radius: 20px;
+    font-size: 1.5rem;
+    border: none;
+    padding: 10px;
+    border-radius: 100%;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 2px 6px #000000e1;
 }
 #products{
-    overflow: auto;
+    display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
-    justify-content: center;
+    gap: 10px;
+}
+#products i{
+    font-size: 4rem;
+}
+#products span{
+    font-size: 1rem;
 }
 button:hover{
     cursor: pointer;
@@ -342,8 +454,8 @@ button:hover{
     margin-bottom: 80px;
 }
 .last-section-img-icons{
-    width: 70px;
-    height: 70px;
+    /* width: 70px;
+    height: 70px; */
     border: 10px solid grey;
     padding: 10px;
     background-color: black;
@@ -352,7 +464,9 @@ button:hover{
     border-radius: 100px;
 }
 .last-section-card{
-    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     text-align: center;
     h3{
         font-family: serif;
@@ -361,11 +475,6 @@ button:hover{
         font-family: monospace;
     }
 }
-/* @media screen and (max-width:352px) {
-    .header{
-        display: none;
-    }
-} */
 @media (max-width: 416px){
     .footer-cards{
         flex-direction: column;
@@ -404,7 +513,7 @@ button:hover{
 /* A mobile view port */
 @media screen and (max-width:530px){
     *{
-        font-size: 12px;
+        /* font-size: 12px; */
     }
     .navbar-nav h1 a{
         font-size: 20px;

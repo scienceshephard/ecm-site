@@ -1,11 +1,12 @@
 <footer th:fragment="footer">
     <div class="footer-cards">
         <div class="footer-card">
-            <h3>Exlusive</h3>
-            <h4>Subscribe</h4>
+            <h4>Subscribe to our news letter </h4>
             <div class="email-container">
-                <input type="email" class="search-input" placeholder="Your email here">
-                <img th:src="@{/images/message-line.svg}" class="img-icons" alt="message-line" />
+                <input type="email" style="color: white;" class="search-input" id="email" placeholder="Your email here">
+                <label for="email">
+                    <i style="color: white; cursor: pointer;" class="bi bi-send"></i>
+                </label>
             </div>
         </div>
         <div class="footer-card">

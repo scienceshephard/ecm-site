@@ -1,7 +1,18 @@
-<div class="wrapper" th:fragment="wrapper">
+
+<main class="wrapper" th:fragment="wrapper">
     <div class="header-list">        
         <div class="card-iphone">
-            <p>adds</p>
+            <div>
+                <span>
+                    <i class="bi bi-apple"></i>
+                    iPhone 14 Series
+                </span>
+                <h1>
+                    Up to 20% off Voucher
+                </h1>
+                <a href="/cart">Shop now <i style="color: white;" class="bi bi-arrow-right"></i> </a>
+            </div>
+            <img th:src="@{/images/Iphone_Pro.png}" alt="Iphone_Pro">
         </div>
     </div>
     <section id="latest-product">
@@ -13,17 +24,37 @@
             <h1>Flash Sales</h1>
             <div class="time"></div>
             <div class="arrows">
-                <button class="arrow-btn" id="arrowLeft">
-                    <img class="arrow-img-icons" id="arrow-left" th:src="@{/images/arrow-left.svg}" alt="arrow-left">
+                <button class="arrow-btn">
+                    <i class="bi bi-arrow-left"></i>
                 </button>
-                <button class="arrow-btn" onclick="addNewTechImage()" id="arrowRight">
-                    <img class="arrow-img-icons"id="arrow-right" th:src="@{/images/arrow-right.svg}" alt="arrow-right">
+                <button class="arrow-btn" onclick="addNewTechImage()">
+                    <i class="bi bi-arrow-right" ></i>
                 </button>
             </div>
         </div>
         <div class="product-image-slider">
-            <div class="overlay" id="overlay"></div> <!-- Background blur effect -->
-            <div class="products-card" id="productsContainer"></div>
+            <!-- Animation slide -->
+             <div class="products-card"></div>
+            <div class="products-card-animate">
+                <div id="products-animation" class="card">
+                </div>
+                <div id="products-animation">
+                </div>
+                <div id="products-animation">
+                </div>
+                <div id="products-animation">
+                </div>
+                <div id="products-animation">
+                </div>
+                <div id="products-animation">
+                </div>
+                <div id="products-animation">
+                </div>
+                <div id="products-animation">
+                </div>
+                <div id="products-animation">
+                </div>
+            </div>
         </div>
         <div class="btn">
             <button>View All Products</button>
@@ -37,42 +68,53 @@
         <div class="flash">
             <h1>Browse by category</h1>
         </div>
-        <div class="products-card" id="products">
+        <div id="products">
             <div class="card">
-                <div class="products-img-card"></div>
-                <div class="products-card-content">Headphones</div>
+                <i class="bi bi-headphones"></i>
+                <span>Headphones</span>
             </div>
             <div class="card">
-                <div class="products-img-card"></div>
-                <div class="products-card-content">Wrist watch</div>
+                <i class="bi bi-smartwatch"></i>
+                <span>SmartWatch</span>
             </div>
             <div class="card">
-                <div class="products-img-card"></div>
-                <div class="products-card-content">Laptop</div>
+                <i class="bi bi-laptop"></i>
+                <span>Laptop</span>
             </div>
             <div class="card">
-                <div class="products-img-card"></div>
-                <div class="products-card-content">Games</div>
+                <i class="bi bi-controller"></i>
+                <span>Games</span>
             </div>
             <div class="card">
-                <div class="products-img-card"></div>
-                <div class="products-card-content">Camera</div>
+                <i class="bi bi-camera"></i>
+                <span>Camera</span>
             </div>
+        </div>
+    </section>
+    <section class="boom-section">
+        <div class="boom-section-card">
+            <div class="">
+                <h3 style="color: #00FF66;">Categories</h3>
+                <h1>Enhance your music Experience</h1>
+                <div class="time"></div>
+                <button>Buy Now!</button>
+            </div>
+            <img th:src="@{/images/JBL_Speaker.png}" alt="JBL">
         </div>
     </section>
     <section class="last-section">
         <div class="last-section-card">
-            <img class="last-section-img-icons" th:src="@{/images/car-side.svg}" alt="car-side">
+            <i class="bi bi-truck last-section-img-icons" style="color: white;"></i>
             <h3>FREE AND FAST DELIVERY</h3>
             <p>Free delivery for all orders over $140</p>
         </div>
         <div class="last-section-card">
-            <img class="last-section-img-icons" th:src="@{/images/headset.svg}" alt="car-side">
+            <i class="bi bi-headset last-section-img-icons" style="color: white;"></i>
             <h3>24/7 CUSTOMER SERVICE</h3>
             <p>Friendly 24/7 customer service</p>
         </div>
         <div  class="last-section-card">
-            <img class="last-section-img-icons" th:src="@{/images/check-square.svg}" alt="car-side">
+            <i class="bi bi-shield-check last-section-img-icons" style="color: white;"></i>
             <h3>MONEY BACK GUARANTEE</h3>
             <p>We return money within 30 days</p>
         </div>
