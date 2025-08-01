@@ -1,23 +1,24 @@
 
-var menuBtn= false
-
-const navLinks= document.getElementById("nav-links")
-function ShowMobileNav() {
-    menuBtn= !menuBtn 
-    if(menuBtn){
-        navLinks.classList.remove("MainLinks-default")
-        navLinks.classList.add("MainLinks-mobile");
+let isBtn = true
+const btn = document.getElementById("btn");
+function ShowMobileNav(){
+    if(isBtn){
+        btn.classList.remove("bi-list")
+        btn.classList.add("bi-x")
     }else{
-        navLinks.classList.remove("MainLinks-mobile");
-        navLinks.classList.add("MainLinks-default")
+        btn.classList.remove("bi-x")
+        btn.classList.add("bi-list")
     }
+    isBtn = !isBtn
+    document.getElementById("nav-links").classList.toggle("active")
 }
 var userdiv = false
 const user = document.getElementById("user")
+
 function showUserdiv(){
     userdiv = !userdiv
     if(userdiv){
-        user.classList.remove("User-mobile")
+user.classList.remove("User-mobile")
         user.classList.add("User-default")
     }else{
         user.classList.remove("User-default")

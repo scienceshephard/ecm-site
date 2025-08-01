@@ -41,7 +41,7 @@ a:hover{
     justify-content: space-between;
     width: 70%;
     margin-inline: auto;
-    position: relative;
+    flex-wrap: wrap;
 }
 .boom-section-card button{
     padding: 15px 40px;
@@ -530,6 +530,8 @@ button:hover{
 @media (max-width:790px){
     #menubtn{
         display: flex;
+        background-color: transparent;
+        border: none;
     }
     #menubtn:active{
         background-color: transparent;
@@ -541,30 +543,39 @@ button:hover{
     }
     .MainLinks-mobile{
         display: flex;
-        position: absolute;
+        position: fixed;
         flex-direction: column;
-        justify-content: space-around;
         top: 80px;
         left: 0;
-        width: 30vw;
+        padding-top: 20px;
         background-color: #db2626a9;
         font-weight: 700;
-        
+        height: 100vh;
+        gap: 20px;
+        transform: translateX(-100%);
+        transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        z-index: 1000;
+        align-items: flex-start;
+        justify-content: flex-start;
         >a{
-            padding: 10px;
+            padding-inline: 20px;
             color: white;
-            border-bottom: solid 1px #db2626a9;
         }
         >a:hover{
-
             color: #db2626a9;
+        }
+        hr{
+            width:100%;
         }
     }
     .nav-links{
         align-items: center;
         margin-left: auto;
         margin-right: 10px;
-    }   
+    }
+    .active {
+        transform: translateX(0);
+    }
 }
 @media screen and (max-width:846px) {
     .last-section{

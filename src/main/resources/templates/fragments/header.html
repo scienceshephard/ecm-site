@@ -1,25 +1,21 @@
 <header class="header">
-  Summer Sale for all Swim Suits And Free Delivery -OFF 50%<a
-    href="/cart"
-    class="text-decoration-none"
-    >Shop Now</a
-  >
+  Summer Sale for all Swim Suits And Free Delivery -OFF 50%
+    <a href="/cart" class="text-decoration-none">Shop Now</a>
 </header>
 <nav th:fragment="header" class="navbar">
   <div class="navbar-nav">
     <h1><a href="/">Shephards✌</a></h1>
     <div class="nav-links">
       <button id="menubtn" onclick="ShowMobileNav()">
-        <img
-          class="img-icons menuIcon"
-          th:src="@{/images/menu-fill.svg}"
-          alt="Menu-fill"
-        />
+        <i class="bi bi-list" id="btn" style="font-size: 1.5rem;"></i>
       </button>
-      <div class="MainLinks-default" id="nav-links">
+      <div class="MainLinks-default MainLinks-mobile" id="nav-links">
         <a href="/register" th:if="${username == 'anonymousUser'}">Sign-Up</a>
+        <hr>
         <a href="/contact">Contact</a>
+        <hr>
         <a href="/about">About</a>
+        <hr>
         <a href="/logout" th:if="${username != 'anonymousUser' }">Logout</a>
       </div>
     </div>
@@ -51,3 +47,4 @@
     </div>
   </div>
 </nav>
+
