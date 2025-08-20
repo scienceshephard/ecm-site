@@ -1,12 +1,11 @@
 package demo.controller;
 
+import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -71,15 +70,5 @@ public class ImageController {
         String url = String.format(UNSPLASH_URL+ "&query=camera&count=%d",accessKey, count);
         ResponseEntity<List> response = restTemplate.getForEntity(url, List.class);
         return ResponseEntity.ok(response.getBody());
-    }
-
-    @GetMapping("/ps5Image")
-    public ResponseEntity<byte[]> getPs5Image(){
-        String imageurl = "https://images.unsplash.com/photo-1679813553141-5621567f95e8?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
-
-        byte[] imageBytes = restTemplate.getForObject(imageurl, byte[].class);
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.IMAGE_JPEG);
-        return new ResponseEntity<>(imageBytes, headers, HttpStatus.OK);
     }
 }

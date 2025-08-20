@@ -132,7 +132,7 @@ h1{
     width: 20px;
 }
 .search-box{
-    border: 1px outset #000000b9;
+    border-bottom: 1px solid grey;
     padding: 8px;
     display: flex;
     align-items: center;
@@ -225,8 +225,9 @@ footer{
     font-size: 1.8rem;
 }
 img{
-    object-fit: contain;
-    height: auto;
+    object-fit: cover;
+    object-position: center;
+    max-height: 100%;
     max-width: 100%;
 }
 section{
@@ -298,6 +299,7 @@ section{
     border-radius: 10px;
     height: 200px;
     overflow: hidden;
+    text-wrap: wrap;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -489,43 +491,6 @@ button:hover{
         font-family: monospace;
     }
 }
-.arrival-container{
-    display: flex;
-    /* gap: 10px; */
-    flex-wrap: wrap;
-    animation: var(--animate-pulse);
-    height: 500px;
-    justify-content: space-between;
-}
-.arrival-big-card{
-    background-color: var(--animation-background-color);
-    width: 33%;
-    height: 100%;
-}
-.arrival-cover-card{
-    display: flex;
-    flex-direction: column;
-    width: 66%;
-    gap: 10px;
-}
-.arrival-hr-card{
-    background-color: var(--animation-background-color);
-    height: 50%;
-    display: flex;
-}
-.arrival-small-card{
-    background-color: var(--animation-background-color);
-    width: 50%;
-    height: 100%;
-}
-.arrival-last-card{
-    display: flex;
-    height: 50%;
-    gap: 10px;
-}
-.box{
-    display: flex;
-}
 
 @media (max-width: 416px){
     .footer-cards{
@@ -640,5 +605,8 @@ button:hover{
 @media screen and (max-width: 852px) {
     .last-section{
         gap: 3px;
+    }
+    .boom-section-card{
+        width: 90%;
     }
 }

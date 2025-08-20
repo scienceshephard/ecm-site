@@ -25,13 +25,12 @@ async function loadInitialTechImages() {
 
     const ProdAnimation= document.querySelector(".products-card-animate");
     ProdAnimation.style.display = "none"; // Hide the animation overlay
-
     images.forEach((image) => {
         const card = document.createElement("div");
         card.classList.add("card");
         card.innerHTML = `
             <div class="products-img-card">
-                <img src="${image.urls.regular}" alt="Tech Image" class="fade-in">
+                <img src="${image.urls.regular}" alt="Tech Image">
             </div>
             <div class="products-card-content">
                 ${image.alt_description || "Tech Image"}
@@ -45,10 +44,6 @@ async function loadInitialTechImages() {
     
 }
 
-// Load 8 images when page loads
-document.addEventListener("DOMContentLoaded", loadInitialTechImages);
-
-
 // Function to fetch and add a new image
 async function addNewTechImage() {
     await new Promise(resolve => setTimeout(resolve, 3000)); // Simulate a delay for the animation
@@ -60,7 +55,7 @@ async function addNewTechImage() {
     card.classList.add("card");
     card.innerHTML = `
         <div class="products-img-card">
-            <img src="${newImage[0].urls.regular}" alt="New Tech Image" class="fade-in">
+            <img src="${newImage[0].urls.regular}" alt="New Tech Image">
         </div>
         <div class="products-card-content">
             ${newImage[0].alt_description || "Tech Image"}
@@ -71,7 +66,9 @@ async function addNewTechImage() {
 }
 
 
-function viewCurrentProduct(url) {
-    console.log(url);
-    
-}
+document.addEventListener("DOMContentLoaded", 
+    ()=> {
+        //loads 8 images initailly
+        loadInitialTechImages();
+    }
+);
