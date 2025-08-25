@@ -31,6 +31,12 @@ a:hover{
     display: flex;
     flex-direction: column;
 }
+
+.logo img{
+    height: 50px;
+    object-fit: contain;
+    object-position: right;
+}
 .header{
     width: 100%;
     background-color: rgba(0, 0, 0, 0.732);
