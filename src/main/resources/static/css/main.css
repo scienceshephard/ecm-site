@@ -571,8 +571,10 @@ button:hover{
         display: none;
     }
 }
-@media (max-width:758px){
-
+@media (max-width:637px){
+    .card-iphone{
+        width: 100%;
+    }
 }
 @media (max-width:790px){
     #menubtn{
