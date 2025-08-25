@@ -48,13 +48,16 @@ a:hover{
     margin-inline: auto;
     flex-wrap: wrap;
 }
+.boom-section-content{
+    width: 100%;
+}
 .boom-section-card button{
-    padding: 15px 40px;
+    padding: 15px 50px;
     background-color: #00FF66;
     color: white;
     border-radius: 10px;
     border: none;
-    margin-top: auto;
+    margin-left: auto;
     width: fit-content;
 }
 .boom-section-card div:nth-child(1){
@@ -130,13 +133,32 @@ h1{
 }
 .img-icons{
     width: 20px;
+}#search-box {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
-.search-box{
-    border-bottom: 1px solid grey;
-    padding: 8px;
-    display: flex;
-    align-items: center;
+
+#search-input {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  padding: 4px 8px;
+
+  /* Start hidden */
+  width: 0;
+  opacity: 0;
+  transition: width 0.5s ease, opacity 0.5s ease;
 }
+
+/* When active, expand smoothly from right to left */
+#search-input.show {
+  width: 180px;   /* adjust size as needed */
+  opacity: 1;
+  border-bottom: 1px solid grey;
+}
+
 input{
     outline: none;
     border: none;
@@ -267,9 +289,11 @@ section{
 .arrows{
     display: flex;
     width: 95%;
+    height: 70px;
     left: 3%;
     position: sticky;
     gap: 20px;
+    align-items: center;
     justify-content: space-between;
     top: 50%;
     z-index: 500;

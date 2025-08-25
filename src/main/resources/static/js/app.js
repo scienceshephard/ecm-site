@@ -29,10 +29,26 @@ user.classList.remove("User-mobile")
 }
 
 //Search Button event Listeners
-function searchbox(){
-    event.preventDefault()
-}
+const searchBtn = document.querySelector("#search-box label"); // only icon clickable
+const searchInput = document.getElementById("search-input");
 
+searchBtn.addEventListener("click", (e) => {
+  e.preventDefault(); // prevent label focusing default
+  searchInput.classList.toggle("show");
+
+  if (searchInput.classList.contains("show")) {
+    searchInput.focus();
+  } else {
+    searchInput.blur();
+  }
+});
+
+document.addEventListener("click", (e) => {
+    if(!searchBtn.contains(e.target) && !searchInput.contains(e.target)){
+        searchInput.classList.remove("show");
+        searchInput.blur();
+    }
+})
 
 //clock
 const days= ["Sunday", "Monday", "Tuesday", "Wednessday","Thursday", "Friday", "Saturday"]
