@@ -5,6 +5,14 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title th:text="${title}"></title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="icon" th:href="@{/images/imageicon.svg}" type="image/svg+xml">
+    
+    <!-- Option 2: AOS (Animate On Scroll) - Scroll-triggered animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link th:href='@{/css/main.css}' rel='stylesheet'>
     <link th:href='@{/css/login.css}' rel='stylesheet'>
 </head>
@@ -13,16 +21,38 @@
     <div th:replace="~{fragments/header :: header}"></div>
     
     <div class="wrapper form-container">
-        <div class="img-wrap"></div>
+        <div class="img-wrap">
+            <img th:src="@{/images/Login_Image.png}" alt="Login_Image">
+        </div>
         <form th:action="@{/login}" class="form-login" method="post">
-        <h1>Log In🤪</h1>
+        <h1>Log In Shephard Store</h1>
+        <p>Enter your details below</p>
             <div class="form">
                 <div class="error" th:if="${param.error}">Invalid Username or Password.🙄</div>
                 <div class="error" th:if="${param.logout}">You have logged out.🙄</div>
-                <input type="text" name="username" placeholder="Username">
-                <input type="password" name="password" placeholder="Password">
+                <div class="input-group">
+                    <input type="text" name="username" placeholder="Username">
+                </div>
+                
+                <div class="input-group">
+                    <input type="password" name="password" id="password" placeholder="Password">
+                    <i id="pass" style="cursor: pointer;" class="bi bi-eye-fill"></i>
+                </div>
+                <script>
+                    const showp= document.getElementById("pass")
+                    let toggle = false
+                    const password = document.getElementById("password")
+                    showp.addEventListener("click", () => {
+                        password.type = toggle ? "password" : "text"
+                        toggle = !toggle
+                        showp.className  = toggle ? "bi bi-eye-slash-fill" : "bi bi-eye-fill"
+                    })
+                </script>
+                <div class="btn-group">
+                    <button class="submit" type="submit">Log In</button>
+                    <a href="/forgot">Forgot pasword?</a>
+                </div>
             </div>
-            <button class="submit" type="submit">Log In</button>
         </form>
     </div>
     <div th:replace="~{fragments/footer :: footer}"></div>

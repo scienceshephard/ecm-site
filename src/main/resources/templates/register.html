@@ -7,38 +7,83 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link th:href='@{/css/main.css}' rel='stylesheet'>
     <link th:href='@{/css/login.css}' rel='stylesheet'>
+    <link rel="icon" th:href="@{/images/imageicon.svg}" type="image/svg+xml">
+    
+    <!-- Option 2: AOS (Animate On Scroll) - Scroll-triggered animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
 <body>
     <div class="container">
         <div th:replace="~{fragments/header :: header}"></div>
 
         <div class="wrapper form-container">
-            <div class="img-wrap"></div>
+            <div class="img-wrap">
+                <img th:src="@{/images/Login_Image.png}" alt="Login_Image">
+            </div>
             <form th:action="@{/register}" th:object="${user}" class="form-login" method="post">
-            <h1>Sign Up🤪</h1>
+                <h1>Create an Account</h1>
+                <p>Enter yor detail below</p>
                 <div class="form">
-                    <div class="field">
+                    <div class="field input-group">
                         <input type="text" name="username" th:field="*{Username}" placeholder="User Name">
-                        <span th:if="${#fields.hasErrors('Username')}" class="error" th:errors="*{Username}"></span>
+                        <div class="error">
+                            <i th:if="${#fields.hasErrors('Username')}" class="bi bi-exclamation-triangle"></i>
+                            <span th:if="${#fields.hasErrors('Username')}" th:errors="*{Username}"></span>
+                        </div>
                     </div>
-                    <div class="field">
+                    <div class="field input-group">
                         <input type="email" name="email" th:field="*{Email}" placeholder="Email">
-                        <span th:if="${#fields.hasErrors('Email')}" class="error" th:errors="*{Email}"></span>
+                        <div class="error">
+                            <i th:if="${#fields.hasErrors('Email')}" class="bi bi-exclamation-triangle"></i>
+                            <span th:if="${#fields.hasErrors('Email')}" th:errors="*{Email}"></span>
+                        </div>
                     </div>
                     <div class="field">
-                        <input type="password" name="Password" th:field="*{Password}" placeholder="Password">
-                        <span th:if="${#fields.hasErrors('Password')}" class="error" th:errors="*{Password}"></span>
+                        <div class="input-group">
+                            <input type="password" class="password" name="Password" th:field="*{Password}" placeholder="Password">
+                            <i style="cursor: pointer; color: grey;" class="bi bi-eye-fill pass"></i>
+                        </div>
+                        <div class="error">
+                            <i th:if="${#fields.hasErrors('Password')}" class="bi bi-exclamation-triangle"></i>
+                            <span th:if="${#fields.hasErrors('Password')}" th:errors="*{Password}"></span>
+                        </div>
                     </div>
                     <div class="field">
-                        <input type="password" name="Confirm Password" th:field="*{ConfirmPassword}" placeholder="Confirm Password">
-                        <span th:if="${#fields.hasErrors('ConfirmPassword')}" class="error" th:errors="*{ConfirmPassword}"></span>
+                        <div class="input-group">
+                            <input type="password" class="password" name="Confirm Password" th:field="*{ConfirmPassword}" placeholder="Confirm Password">
+                            <i style="cursor: pointer; color: grey;" class="bi bi-eye-fill pass"></i>
+                        </div>
+                        <div class="error">
+                            <i th:if="${#fields.hasErrors('ConfirmPassword')}" class="bi bi-exclamation-triangle"></i>
+                            <span th:if="${#fields.hasErrors('ConfirmPassword')}" th:errors="*{ConfirmPassword}"></span>
+                        </div>
                     </div>
-                </div>
-                <button class="submit" type="submit">Sign Up</button>
+                </div>  
+                <button class="submit" style="width: 100%;" type="submit">Create Account</button>
+                <button type="button">
+                        <img th:src="@{/images/google.svg}" alt="google">
+                        <span>Sign up with Google</span>
+                </button>
                 <div>Already have an account <a href="/login">Login here.</a></div>
             </form>
         </div>
         <div th:replace="~{fragments/footer :: footer}"></div>
     </div>
+    <script>
+        let toggle = false
+        const showp= document.getElementsByClassName("pass")
+        const password = document.getElementsByClassName("password")
+        Array.from(showp).forEach((icon, index)=>{
+            icon.addEventListener("click", ()=>{
+                password[index].type = toggle ? "password" : "text"
+                toggle = !toggle
+                icon.className  = toggle ? "bi bi-eye-slash-fill" : "bi bi-eye-fill"
+            })
+        })
+    </script>
 </body>
 </html>

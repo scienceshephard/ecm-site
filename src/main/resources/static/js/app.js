@@ -27,7 +27,6 @@ user.classList.remove("User-mobile")
     console.log(userdiv);
     
 }
-
 //Search Button event Listeners
 const searchBtn = document.querySelector("#search-box label"); // only icon clickable
 const searchInput = document.getElementById("search-input");

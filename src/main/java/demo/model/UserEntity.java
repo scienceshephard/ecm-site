@@ -19,8 +19,7 @@ public class UserEntity {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int Id;
 
-    @NotEmpty(  message = "Name is required")
-    @Size(min = 4, message = "Name must not be less than 4 characters")
+    @NotEmpty(  message = "Username is required")
     private String username;
 
     @NotEmpty(message = "Email is required")
@@ -28,6 +27,7 @@ public class UserEntity {
     private String Email;
 
     @NotEmpty(message = "Password is Required")
+    @Size(min = 4, message = "Name must not be less than 4 characters")
     private String Password;
 
     
