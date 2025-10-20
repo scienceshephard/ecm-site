@@ -97,7 +97,7 @@ h1{
 }
 .navbar{
     width: 100%;
-    padding: min(20px, 10%) 0;
+    padding: min(10px, 10%) 0;
     transform: perspective(1px) translateZ(0);
     box-shadow: 0 2px 6px #000000e1;
     position: sticky;
@@ -116,36 +116,28 @@ h1{
     width: 30vw;
     justify-content: space-between;
 }
-.User-mobile{
-    display: none;
-}
-.User-default{
-    position: absolute;
-    background-color: #db2626a9;
-    right: 0;
-    top: 62px;
-    padding: 6px;
-    >a{
-        color: white;
-    }
-}
 #menubtn{
     display: none;
 }
 .nav-icons{
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
+    /* border: 1px solid red; */
 }
 .img-icons{
     width: 20px;
-}#search-box {
+}
+#search-box {
   padding: 8px;
   display: flex;
   align-items: center;
   position: relative;
 }
-
+#search-btn{
+    border-right: 1px solid gray;
+    padding-right: 10px;
+}
 #search-input {
   outline: none;
   border: none;
@@ -153,11 +145,10 @@ h1{
   padding: 4px 8px;
 
   /* Start hidden */
-  width: 0;
+  width: 0px;
   opacity: 0;
   transition: width 0.5s ease, opacity 0.5s ease;
 }
-
 /* When active, expand smoothly from right to left */
 #search-input.show {
   width: 180px;   /* adjust size as needed */
@@ -196,16 +187,18 @@ footer{
     text-align: center;
 }
 .email-container{
-    border: 1px solid white;
+    border: 1px solid #d8cece;
+    border-radius: 20px;
     display: flex;
     padding: 10px;
     color: white;
 }
 .arrow-up{
     position: fixed;
-    bottom: 10px;
+    bottom: 30px;
     right: 10px;
     background-color: white;
+    z-index: 1000;
 }
 .wrapper{
     margin-top: 20px;
@@ -272,6 +265,10 @@ section{
     display: flex;  
     gap: 10px;
     align-items: center;
+}
+.time{
+    gap: 30px;
+    margin-left: auto;
 }
 .duration p{
     font-size: 11px;

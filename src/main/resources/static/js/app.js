@@ -1,4 +1,3 @@
-
 let isBtn = true
 const btn = document.getElementById("btn");
 function ShowMobileNav(){
@@ -12,21 +11,7 @@ function ShowMobileNav(){
     isBtn = !isBtn
     document.getElementById("nav-links").classList.toggle("active")
 }
-var userdiv = false
-const user = document.getElementById("user")
 
-function showUserdiv(){
-    userdiv = !userdiv
-    if(userdiv){
-user.classList.remove("User-mobile")
-        user.classList.add("User-default")
-    }else{
-        user.classList.remove("User-default")
-        user.classList.add("User-mobile")
-    }
-    console.log(userdiv);
-    
-}
 //Search Button event Listeners
 const searchBtn = document.querySelector("#search-box label"); // only icon clickable
 const searchInput = document.getElementById("search-input");
@@ -83,9 +68,6 @@ function clock() {
 }
 setInterval(clock, 1000)
 clock()
-
-
-
 
 async function fetchApiKey() {
     try{

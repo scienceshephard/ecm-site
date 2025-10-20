@@ -4,7 +4,7 @@
 </header>
 <nav th:fragment="header" class="navbar">
   <div class="navbar-nav">
-    <h1 class="logo"><a href="/">Shephards <img alt="logo" th:src="@{/images/imageicon.svg}"></a></h1>
+    <h1 class="logo"><a href="/"><img alt="logo" th:src="@{/images/imageicon.svg}"></a></h1>
     <div class="nav-links">
       <button id="menubtn" onclick="ShowMobileNav()">
         <i class="bi bi-list" id="btn" style="font-size: 1.5rem;"></i>
@@ -36,14 +36,7 @@
       <a href="/cart">
         <i class="bi bi-cart"></i>
       </a>
-      <button onclick="showUserdiv()">
-        <i class="bi bi-person-circle"></i>
-      </button>
-
-      <div class="User-mobile" id="user">
-        <a href="/login" th:if="${username == 'anonymousUser' }">Sign in</a>
-        <a href="/logout" th:if="${username != 'anonymousUser' }">Logout</a>
-      </div>
+      <a href="/userid" th:if="${username != 'anonymousUser' }" ><i class="bi bi-person-circle"></i></a>
     </div>
   </div>
 </nav>
