@@ -27,3 +27,4 @@ function updateButtonStates() {
         rightAr.disabled = false
     }
 }
+updateButtonStates()
