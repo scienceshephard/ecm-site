@@ -321,6 +321,7 @@ section{
 }
 
 .card {
+    position: relative; /* needed for overlay */
     min-width: 200px;
     max-width: 250px;
     border-radius: 10px;
@@ -338,11 +339,92 @@ section{
     transform: perspective(1px) translateZ(0);
     box-shadow: 0 4px 6px #000000e1;
 }
-.products-card-content{
+
+/* image container already has these; ensure position relative */
+.products-img-card{
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+}
+
+/* overlay that shows full description - constrained to image area */
+.overlay-text{
+    position: absolute;
+    inset: 0; /* top:0; right:0; bottom:0; left:0 */
+    display: none;
+    background: rgba(0,0,0,0.65); /* semi-transparent so image visible behind */
+    color: #fff;
+    padding: 12px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    /* white-space: normal;
-    overflow:hidden; */
-    font-size: 1.3rem;
+    z-index: 50;
+    overflow: auto; /* scroll if text is long */
+    font-size: 0.85rem; /* smaller to fit */
+    line-height: 1.2;
+}
+
+/* content wrapper inside overlay */
+.overlay-content{
+    max-height: 100%;
+    overflow: auto;
+    word-break: break-word;
+    width: 100%;
+}
+
+/* close button in overlay */
+.overlay-close{
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* keep preview small and not pushing layout */
+.products-card-content{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    padding: 8px;
+    text-align: center;
+    min-height: 3.2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.products-card-content .preview-text{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 140px;
+    display: inline-block;
+}
+
+.products-card-content .full-text{
+    word-break: break-word;
+    max-width: 220px;
+    text-align: center;
+}
+
+.expand-btn{
+    background: transparent;
+    border: none;
+    color: #d32f2f;
+    cursor: pointer;
+    font-weight: 700;
+    padding: 0 6px;
+    font-size: 0.95rem;
 }
 .products-img-card{
     width: 100%;
