@@ -15,13 +15,12 @@ public class ImageService {
     }
 
     public List<Object> getImages(String query, int count){
-        /*
-        if (count < 1 || count > 10) {
+        if (count < 1 || count > 30) {
             throw new IllegalArgumentException(
                     "count must be between 1 and 30"
             );
         }
-        */
+
         return unsplashClient.getRandomImages(query, count);
     }
 }

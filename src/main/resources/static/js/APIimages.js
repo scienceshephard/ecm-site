@@ -8,16 +8,11 @@ function truncateWords(text, wordCount=3){
 }
 
 // Function to fetch laptop images from the backend
-async function fetchTechImages(count) {
-    try {
-        const response = await fetch(`/api/images/${categories.gadgets}?query=gadgets?count=${count}`);
-        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-
-        const images = await response.json();
-        return images; // Returns an array of images
-    } catch (error) {
-        console.error("Error fetching images:", error);
-    }
+async function fetchTechImages(count, query = categories.gadgets) {
+    const params = new URLSearchParams({ query, count });
+    const response = await fetch(`/api/images/gadgets?${params}`);
+    if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+    return await response.json();
 }
 
 function makeProductCard(image) {
