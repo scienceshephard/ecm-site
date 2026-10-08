@@ -10,7 +10,7 @@ function truncateWords(text, wordCount=3){
 // Function to fetch laptop images from the backend
 async function fetchTechImages(count) {
     try {
-        const response = await fetch(`/api/images/${categories.gadgets}?count=${count}`);
+        const response = await fetch(`/api/images/${categories.gadgets}?query=gadgets?count=${count}`);
         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
         const images = await response.json();
