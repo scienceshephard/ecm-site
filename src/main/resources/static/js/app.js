@@ -20,14 +20,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Search Button event Listeners
     const searchBtn = document.querySelector("#search-box label"); // only icon clickable
+    const searchBox = document.querySelector("#search-box");
     const searchInput = document.getElementById("search-input");
     if (searchBtn && searchInput) {
       searchBtn.addEventListener("click", (e) => {
         e.preventDefault(); // prevent label focusing default
         searchInput.classList.toggle("show");
-    
+
         if (searchInput.classList.contains("show")) {
-          searchInput.focus();
+            searchInput.focus();
+            searchBox.style.backgroundColor= '#F5F5F5';
         } else {
           searchInput.blur();
         }
@@ -37,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if(!searchBtn.contains(e.target) && !searchInput.contains(e.target)){
               searchInput.classList.remove("show");
               searchInput.blur();
+              searchBox.style.backgroundColor= '';
           }
       });
     }
