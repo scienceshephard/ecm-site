@@ -299,6 +299,11 @@ section{
     justify-content: space-between;
     top: 50%;
     z-index: 500;
+    margin-bottom: -70px;
+    pointer-events: none;   /* the empty bar no longer blocks clicks */
+}
+.arrows .arrow-btn {
+    pointer-events: auto;   /* the buttons themselves still work */
 }
 .product-image-slider::-webkit-scrollbar{
     display:none;
@@ -370,6 +375,12 @@ section{
 }
 
 /* content wrapper inside overlay */
+.card.expanded .overlay-text {
+    display: flex;
+}
+.card.expanded .preview-text {
+    visibility: hidden;
+}
 .overlay-content{
     max-height: 100%;
     overflow: auto;
@@ -435,7 +446,6 @@ section{
     border-radius: 10px 10px 0 0;
 }
 .products-img-card img{
-    height: fit-content;
     display: flex;
     border-radius: 10px 10px 0 0;
 }
@@ -598,6 +608,58 @@ button:hover{
     >p{
         font-family: monospace;
     }
+}
+
+/* Full screen image viewer */
+#image-lightbox {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s;
+    cursor: zoom-out;
+}
+#image-lightbox.open {
+    opacity: 1;
+    visibility: visible;
+}
+#image-lightbox img {
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    max-height: none;
+    object-fit: contain; /* whole image visible, no cropping */
+    border-radius: 0;
+}
+.lightbox-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 60px 24px 24px;
+    color: #fff;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+}
+.lightbox-title {
+    font-family: monospace;
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+}
+.lightbox-text {
+    font-size: 1rem;
+    max-width: 70ch;
+    opacity: 0.85;
+}
+body.lightbox-open {
+    overflow: hidden;
+}
+.products-img-card img {
+    cursor: pointer;
 }
 
 @media (max-width: 416px){

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -21,13 +22,25 @@ public class WebConfig {
     @Autowired
     UserDetailsService userDetailsService;
     @Bean
-    public SecurityFilterChain securityFilterChain( HttpSecurity http) throws Exception{
-
+    @Profile("!dev")
+    public SecurityFilterChain devSecurityFilterChain( HttpSecurity http) throws Exception{
         http.csrf(csrf -> csrf.ignoringRequestMatchers("/api/images/**"))
         .authorizeHttpRequests(auth->auth.requestMatchers( "/register", "/fragments/**", "/logout", "/css/**", "/js/**", "/", "/api/images/**","/images/**")
         .permitAll().anyRequest().authenticated())
         .formLogin(form ->form.loginPage("/login").defaultSuccessUrl("/", true).permitAll())
         .logout(logout -> logout.logoutUrl("/logout").logoutSuccessUrl("/login?logout").invalidateHttpSession(true).clearAuthentication(true).permitAll());
+        return http.build();
+    }
+
+
+
+    @Bean
+    @Profile("dev")
+    public SecurityFilterChain prodSecurityFilterChain( HttpSecurity http) throws Exception{
+        http.csrf(csrf -> csrf.ignoringRequestMatchers("/api/images/**"))
+                .authorizeHttpRequests(auth -> auth.anyRequest().permitAll())
+                .formLogin(form ->form.loginPage("/login").defaultSuccessUrl("/", true).permitAll())
+                .logout(logout -> logout.logoutUrl("/logout").logoutSuccessUrl("/login?logout").invalidateHttpSession(true).clearAuthentication(true).permitAll());
         return http.build();
     }
 
