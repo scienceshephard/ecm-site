@@ -16,10 +16,110 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
 <body>
+        <script th:src='@{/js/app.js}'></script>
     <div class="container">
         <div th:replace="~{fragments/header :: header}"></div>
-        <div class="wrapper">
-            About us 🤡🤡
+        <div class="wrapper about-container">
+            <div class="about-main">
+                <div class="about-story">
+                    <h1>Our Story</h1>
+                    <div class="about-main-story">
+                        <p>Launced in 2015, Exclusive is South Asia’s premier online shopping makterplace with an active presense in Bangladesh.
+                            Supported by wide range of tailored marketing, data and service solutions,
+                            Exclusive has 10,500 sallers and 300 brands and serves 3 millioons customers across the region.
+                        </p>
+                        <p>
+                            Exclusive has more than 1 Million products to offer, growing at a very fast.
+                            Exclusive offers a diverse assotment in categories ranging  from consumer.
+                        </p>
+                    </div>
+                </div>
+                <img th:src="@{/images/two_ customers.png}" alt="Two Customers" class="two-customers-image">
+            </div>
+
+            <section class="last-section about-section">
+                <div class="last-section-card">
+                    <div class="about-card-image-container">
+                        <img class="about-card-img" th:src="@{/images/Group.png}">
+                    </div>
+                    <h2>10.5K</h2>
+                    <p>Sallers active our site</p>
+                </div>
+
+                <div class="last-section-card" style="background-color: #DB4444; color: white;">
+                    <div class="about-card-image-container" style="border-color: #E67C7C; background-color: white;">
+                        <span class="about-dollar" style="color: black;">$</span>
+                    </div> 
+                    <h2>33K</h2>
+                    <p>Monthly product sale</p>
+                </div>
+
+                <div class="last-section-card">
+                    <div class="about-card-image-container">
+                        <img class="about-card-img" th:src="@{/images/Icon-shopping-bag.png}">
+                    </div>
+                    <h2>45.5K</h2>
+                    <span>Customer active in our site</span>
+                </div>
+
+                <div class="last-section-card">
+                    <div class="about-card-image-container">
+                        <img class="about-card-img" th:src="@{/images/Icon-moneybag.png}">
+                    </div>
+                    <h2>25K</h2>
+                    <p>Annual gross sale in our site</p>
+                </div>
+            </section>
+            <section class="last-section about-section">
+                <div class="about-card">
+                    <img th:src="@{/images/tom.png}" alt="Tom Cruise">
+                    <h2>Tom Cruise</h2>
+                    <span>Founder & Chairman</span>
+                    <span>
+                        <i class="bi bi-search"></i>
+                        <i class="bi bi-search"></i>
+                        <i class="bi bi-search"></i>
+                    </span>
+                </div>
+                <div class="about-card">
+                    <img th:src="@{/images/emma.png}" alt="Emma Watson">
+                    <h2>Emma Watson</h2>
+                    <span>Managing Director</span>
+                    <span>
+                        <i class="bi bi-search"></i>
+                        <i class="bi bi-search"></i>
+                        <i class="bi bi-search"></i>
+                    </span>
+                </div>
+                <div class="about-card">
+                    <img th:src="@{/images/will.png}" alt="Will Smith">
+                    <h2>Will Smith</h2>
+                    <span>Product Designer</span>
+                    <span>
+                        <i class="bi bi-search"></i>
+                        <i class="bi bi-search"></i>
+                        <i class="bi bi-search"></i>
+                    </span>
+                </div>
+            </section>
+
+            <section class="last-section about-section">
+                <div class="last-section-card">
+                    <i class="bi bi-truck last-section-img-icons" style="color: white;"></i>
+                    <h3>FREE AND FAST DELIVERY</h3>
+                    <p>Free delivery for all orders over $140</p>
+                </div>
+                <div class="last-section-card">
+                    <i class="bi bi-headset last-section-img-icons" style="color: white;"></i>
+                    <h3>24/7 CUSTOMER SERVICE</h3>
+                    <p>Friendly 24/7 customer service</p>
+                </div>
+                <div  class="last-section-card">
+                    <i class="bi bi-shield-check last-section-img-icons" style="color: white;"></i>
+                    <h3>MONEY BACK GUARANTEE</h3>
+                    <p>We return money within 30 days</p>
+                </div>
+            </section>
         </div>
 
         <div th:replace="~{fragments/footer :: footer}"></div>
