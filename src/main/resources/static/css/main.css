@@ -584,10 +584,9 @@ button:hover{
 }
 .last-section{
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
-    margin: 80px 0px;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 .last-section-img-icons{
     border: 10px solid grey;
@@ -631,11 +630,10 @@ button:hover{
     width: 300px;
 }
 .last-section-card{
-    border: 1px solid #C1C0C1;
+    flex: 1 1 220px;   /* equal share of the row, wraps when narrower than 220px */
     border-radius: 10px;
     padding: 20px;
     display: flex;
-    width: 20%;
     flex-direction: column;
     gap: 10px;
     text-align: center;

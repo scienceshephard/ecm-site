@@ -6,18 +6,25 @@
     display: flex;
     justify-content: space-between;
     width: 70%;
-    align-items: center;    
+    align-items: center;
 }
 .form{
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
     margin-top: 20px;
-}
-.form-login{
+}.form-login{
     gap: 10px;
     display: grid;
+    width: min(100%, 300px);   /* replaces justify-self: center */
 }
+
+.field{
+    display: flex;
+    width: 100%;               /* was 300px, so it can shrink on very small phones */
+    flex-wrap: wrap;
+}
+
 .form input{ 
     color: black;
     font-size: 1.3rem;
@@ -49,11 +56,6 @@ img{
     width: 100%;
     display: inline;
 }
-.field{
-    display: flex;
-    width: 300px;
-    flex-wrap: wrap;
-}
 .input-group{
     display: flex;
     border-bottom: 1px solid grey;
@@ -68,9 +70,25 @@ button[type="button"]{
     border: 1px solid grey;
     border-radius: 5px;
 }
+.img-wrap{
+    margin: 0px 20px 20px 0px;
+}
+
 @media(max-width: 716px){
     .img-wrap{
-        /* display: none; */
+        display: none;
+    }
+    .form-container{
+        justify-content: center;   /* replaces margin-inline: auto */
+        padding-inline: 16px;
+    }
+}
+@media(max-width: 716px){
+    .img-wrap{
+        display: none;
+    }
+    .form-container{
+        margin-inline: auto;
     }
 }
 
