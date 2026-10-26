@@ -7,7 +7,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -16,16 +15,15 @@ public class CustomErrorController implements ErrorController {
     private static final Logger LOGGER= LoggerFactory.getLogger(CustomErrorController.class);
 
     String errorPage= "error/error";
-    @GetMapping
+    @RequestMapping 
     public String handleError(HttpServletRequest request){
         Object status=request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
-        if(status != null){
-            Integer stat=Integer.valueOf(status.toString());
-            if(stat==HttpStatus.NOT_FOUND.value()){
-                errorPage= "error/404";
-                LOGGER.error("Error 404");
-            }
+        Object uri = request.getAttribute(RequestDispatcher.ERROR_REQUEST_URI);
+        if(status != null && Integer.parseInt(status.toString()) == HttpStatus.NOT_FOUND.value()){
+            LOGGER.error("404 Not Found", uri);
+            return "error/404";
         }
+        LOGGER.error("Error {} on {}", status, uri);
         return errorPage;
     }
 }
